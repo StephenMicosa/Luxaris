@@ -1,15 +1,19 @@
+import { useState } from "react";
+
 export default function Mannequins() {
+    const [activeIndex, setActiveIndex] = useState(0);
+
     const mannequinTypes = [
-        { label: "Mannequin défilé", isActive: true },
-        { label: "Mannequin publicité", isActive: false },
-        { label: "Mannequin Fitness", isActive: false },
-        { label: "Mannequin cabine", isActive: false },
+        { label: "Mannequin défilé" },
+        { label: "Mannequin publicité" },
+        { label: "Mannequin Fitness" },
+        { label: "Mannequin cabine" },
     ];
 
     return (
-        <section className="w-full bg-white py-16 px-4">
-            <div className="mx-auto max-w-6xl">
-                <h2 className="text-center text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+        <section className="min-h-screen w-full bg-white py-20 px-4">
+            <div className="mx-auto max-w-6xl w-full">
+                <h2 className="text-center text-3xl md:text-4xl font-bold text-[#4A001A] mb-4">
                     Tout-en-un : votre mannequin <br />
                     virtuel prêt à l&apos;emploi
                 </h2>
@@ -20,15 +24,16 @@ export default function Mannequins() {
                     pour accompagner votre succès.
                 </p>
 
-                <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex flex-col md:flex-row gap-12 items-start">
                     {/* Left side - Menu */}
-                    <div className="w-full md:w-1/3 flex flex-col gap-3">
+                    <div className="w-full md:w-1/3 flex flex-col gap-4 md:sticky md:top-28 self-start">
                         {mannequinTypes.map((type, index) => (
                             <button
                                 key={index}
-                                className={`py-3 px-6 rounded-full font-semibold text-left transition ${type.isActive
-                                        ? "bg-[#4A001A] text-white"
-                                        : "bg-transparent text-slate-900 border border-slate-200"
+                                onClick={() => setActiveIndex(index)}
+                                className={`py-3 px-6 rounded-full font-semibold text-left transition focus:outline-none ${activeIndex === index
+                                    ? "bg-rose-950 text-white"
+                                    : "bg-transparent text-slate-900"
                                     }`}
                             >
                                 {type.label}
@@ -37,12 +42,25 @@ export default function Mannequins() {
                     </div>
 
                     {/* Right side - Grid */}
-                    <div className="w-full md:w-2/3 grid grid-cols-2 gap-4">
-                        <div className="bg-slate-200 rounded-2xl h-48 md:h-56"></div>
-                        <div className="bg-slate-200 rounded-2xl h-48 md:h-56"></div>
-                        <div className="bg-slate-200 rounded-2xl h-48 md:h-56"></div>
-                        <div className="bg-slate-200 rounded-2xl h-48 md:h-56"></div>
-                        <div className="bg-slate-200 rounded-2xl h-48 md:h-56 col-span-2 md:col-span-1"></div>
+                    <div className="w-full md:w-2/3 grid grid-cols-2 gap-6">
+                        <div className="bg-slate-300 rounded-3xl h-64 overflow-hidden">
+                            <img src="https://picsum.photos/400/400?random=1" alt="Model" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="bg-slate-300 rounded-3xl h-64 overflow-hidden">
+                            <img src="https://picsum.photos/400/400?random=2" alt="Model" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="bg-slate-300 rounded-3xl h-64 overflow-hidden">
+                            <img src="https://picsum.photos/400/400?random=3" alt="Model" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="bg-slate-300 rounded-3xl h-64 overflow-hidden">
+                            <img src="https://picsum.photos/400/400?random=4" alt="Model" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="bg-slate-300 rounded-3xl h-64 overflow-hidden">
+                            <img src="https://picsum.photos/400/400?random=5" alt="Model" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="bg-slate-300 rounded-3xl h-64 overflow-hidden">
+                            <img src="https://picsum.photos/400/400?random=6" alt="Model" className="w-full h-full object-cover" />
+                        </div>
                     </div>
                 </div>
             </div>

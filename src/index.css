@@ -5,6 +5,20 @@
   font-family: 'Cabinet Grotesk', sans-serif;
 }
 
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus,
+input:focus,
+a:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 :root {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #0f172a;
