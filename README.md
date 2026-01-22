@@ -7,7 +7,7 @@ A modern web application built with React, Vite, and Tailwind CSS.
 ### Prerequisites
 
 - **Node.js** (v16 or higher recommended)
-- **npm** or **yarn** package manager
+- **npm** package manager
 
 ### Steps
 
