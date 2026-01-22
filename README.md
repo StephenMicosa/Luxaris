@@ -1,87 +1,87 @@
 # Luxaris
 
-A modern web application built with React, Vite, and Tailwind CSS.
+Une application web moderne construite avec React, Vite et Tailwind CSS.
 
 ## Installation
 
-### Prerequisites
+### Prérequis
 
-- **Node.js** (v16 or higher recommended)
-- **npm** or **yarn** package manager
+- **Node.js** (v16 ou supérieure recommandé)
+- **npm** gestionnaire de paquets
 
-### Steps
+### Étapes
 
-1. **Clone the repository**
+1. **Clonez le dépôt**
    ```bash
    git clone https://github.com/PhntmVoid/Luxaris.git
    cd Luxaris
    ```
 
-2. **Install dependencies**
+2. **Installez les dépendances**
    ```bash
    npm install
    ```
-   Or if you use yarn:
+   Ou si vous utilisez yarn :
    ```bash
    yarn install
    ```
 
-3. **Start the development server**
+3. **Démarrez le serveur de développement**
    ```bash
    npm run dev
    ```
-   Or with yarn:
+   Ou avec yarn :
    ```bash
    yarn dev
    ```
 
-4. **Build for production**
+4. **Construire pour la production**
    ```bash
    npm run build
    ```
-   Or with yarn:
+   Ou avec yarn :
    ```bash
    yarn build
    ```
 
-## Available Scripts
+## Scripts disponibles
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build the application for production
-- `npm run lint` - Run ESLint to check code quality
-- `npm run preview` - Preview the production build locally
+- `npm run dev` - Démarrer le serveur de développement
+- `npm run build` - Construire l'application pour la production
+- `npm run lint` - Exécuter ESLint pour vérifier la qualité du code
+- `npm run preview` - Prévisualiser la version de production localement
 
-## Project Structure
+## Structure du projet
 
 ```
 src/
-├── components/       # Reusable React components
-├── pages/           # Page components
-├── assets/          # Static assets
-├── App.jsx          # Root component
-├── App.css          # Global styles
-├── main.jsx         # Application entry point
-└── index.css        # Global CSS
+├── components/       # Composants React réutilisables
+├── pages/           # Composants de pages
+├── assets/          # Ressources statiques
+├── App.jsx          # Composant racine
+├── App.css          # Styles globaux
+├── main.jsx         # Point d'entrée de l'application
+└── index.css        # CSS global
 ```
 
 ## Technologies
 
-- **React** ^19.2.0 - UI library
-- **Vite** ^7.2.4 - Build tool and dev server
-- **Tailwind CSS** ^4.1.18 - Utility-first CSS framework
-- **React Router** ^7.12.0 - Client-side routing
-- **ESLint** ^9.39.1 - Code linting
+- **React** ^19.2.0 - Bibliothèque UI
+- **Vite** ^7.2.4 - Outil de build et serveur de développement
+- **Tailwind CSS** ^4.1.18 - Framework CSS utilitaire
+- **React Router** ^7.12.0 - Routage côté client
+- **ESLint** ^9.39.1 - Linter de code
 
-## Development
+## Développement
 
-For development, use the following command to start a local server with hot module replacement:
+Pour le développement, utilisez la commande suivante pour démarrer un serveur local avec remplacement de module à chaud :
 
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173` (or the next available port).
+L'application sera disponible à l'adresse `http://localhost:5173` (ou le port disponible suivant).
 
-## License
+## Licence
 
-Licensed under the MIT License. See the LICENSE file for more details.
+Sous licence MIT. Voir le fichier LICENSE pour plus de détails.
