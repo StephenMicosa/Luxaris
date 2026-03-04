@@ -5,7 +5,8 @@ export default function About() {
     { name: "Clément", role: "Directeur Artistique" },
     { name: "Manon", role: "Communication & Marketing" },
     { name: "Ilona", role: "Communication & Marketing" },
-    { name: "Stephan", role: "Développeur Web" },
+    { name: "Stephen", role: "Développeur Web" },
+    { name: "Walid", role: "Développeur Web" },
     { name: "Ayoub", role: "Administrateur d’infrastructures" },
     { name: "Damien", role: "Développement IA & Data Engineering" },
   ];
