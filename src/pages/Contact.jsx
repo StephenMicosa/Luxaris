@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <main className="bg-white text-slate-900">
       <style>{contactStyles}</style>
-      <section className="min-h-[70vh] flex flex-col items-center justify-center px-4 text-center bg-slate-50 animate-scroll" ref={scrollRef}>
+      <section className="min-h-[70vh] flex flex-col items-center justify-center py-15 px-4 text-center bg-slate-50 animate-scroll" ref={scrollRef}>
         <h1 className="text-4xl md:text-5xl font-bold text-[#4A001A] mb-6 contact-text">
           Parlons-en
         </h1>
