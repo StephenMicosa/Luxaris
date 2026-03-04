@@ -25,7 +25,6 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
 
-        {/* IMPORTANT : Footer ici, pas dans une page */}
         <Footer />
       </div>
     </BrowserRouter>
