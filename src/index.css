@@ -1,51 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700&display=swap");
 
 * {
-  font-family: 'Cabinet Grotesk', sans-serif;
-}
-
-*:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-button:focus,
-input:focus,
-a:focus,
-textarea:focus,
-select:focus {
-  outline: none !important;
-  box-shadow: none !important;
+  font-family: "Cabinet Grotesk", sans-serif;
 }
 
 :root {
-  font-family: 'Cabinet Grotesk', sans-serif;
   color: #0f172a;
-  background-color: #0b1021;
+  background: #ffffff;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: radial-gradient(circle at 20% 20%, #111831 0, transparent 35%),
-    radial-gradient(circle at 80% 0%, #13254f 0, transparent 40%),
-    #0b1021;
-  color: #e2e8f0;
-}
-
-/* Scroll-triggered animations */
-@keyframes scrollFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-scroll {
-  animation: scrollFadeIn 0.6s ease-out forwards;
+  background: #ffffff;
+  color: #0f172a;
 }
