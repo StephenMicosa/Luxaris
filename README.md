@@ -25,7 +25,8 @@ Une application web moderne construite avec React, Vite et Tailwind CSS.
    ```bash
    yarn install
    ```
-
+   npm install @google/generative-ai
+   ```
 3. **Démarrez le serveur de développement**
    ```bash
    npm run dev
