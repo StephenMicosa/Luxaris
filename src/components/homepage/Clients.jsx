@@ -43,6 +43,37 @@ const testimonials = [
     },
 ];
 
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+
+const clientStyles = `
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+  
+  .testimonial-card {
+    animation: fadeInScale 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+  .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+  .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+  .testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+  .testimonial-card:nth-child(5) { animation-delay: 0.5s; }
+  .testimonial-card:nth-child(6) { animation-delay: 0.6s; }
+`;
+
 function Stars({ value }) {
     return (
         <div className="flex items-center gap-1 text-amber-500 text-sm" aria-label={`${value} étoiles`}>
@@ -56,7 +87,7 @@ function Stars({ value }) {
 
 function TestimonialCard({ item }) {
     return (
-        <article className="bg-white border border-slate-100 shadow-sm rounded-2xl p-5 flex flex-col gap-4">
+        <article className="bg-white border border-slate-100 shadow-sm rounded-2xl p-5 flex flex-col gap-4 hover:shadow-md transition-shadow testimonial-card">
             <Stars value={item.rating} />
             <p className="text-slate-700 text-sm leading-relaxed">{item.text}</p>
             <div className="flex items-center gap-3">
@@ -73,10 +104,13 @@ function TestimonialCard({ item }) {
 }
 
 export default function Clients() {
+    const scrollRef = useScrollAnimation();
     return (
-        <section className="w-full bg-[#fbf8fb] py-16 px-4">
+        <>
+        <style>{clientStyles}</style>
+        <section className="w-full bg-[#fbf8fb] py-16 px-4 animate-scroll" ref={scrollRef}>
             <div className="max-w-6xl mx-auto flex flex-col gap-10">
-                <div className="text-center space-y-3">
+                <div className="text-center space-y-3 animate-fade-in-scale">
                     <p className="text-xs font-semibold uppercase tracking-wide text-rose-900">Nos clients</p>
                     <h2 className="text-3xl md:text-4xl font-bold text-rose-950 leading-tight">
                         Découvrez ce que disent <br className="hidden md:block" /> nos clients
@@ -106,5 +140,6 @@ export default function Clients() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
