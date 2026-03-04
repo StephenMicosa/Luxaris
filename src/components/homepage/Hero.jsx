@@ -52,7 +52,7 @@ export default function Hero() {
                 style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
             >
                 {/* Background decoration */}
-                <div className="absolute inset-0 opacity-30 bg-black/40">
+                <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-1/4 w-96 h-96 bg-rose-200 rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-200 rounded-full blur-3xl"></div>
                 </div>

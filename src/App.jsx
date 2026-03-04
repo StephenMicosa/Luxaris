@@ -9,6 +9,7 @@ import Tarifs from "./pages/Tarifs.jsx";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
+import FAQPage from "./pages/FAQPage.jsx";
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/pricing" element={<Tarifs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
 

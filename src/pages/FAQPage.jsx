@@ -29,6 +29,7 @@ export default function FAQPage() {
                 </div>
             </section>
 
+            {/* Search and FAQ Section */}
             <section className="px-4 py-12 md:py-16 bg-slate-50">
                 <div className="max-w-3xl mx-auto w-full space-y-12">
                     <FAQHeader />
