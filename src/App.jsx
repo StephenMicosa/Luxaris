@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
 import FAQPage from "./pages/FAQPage.jsx";
+import Admin from "./pages/Admin.jsx";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
 
         <Footer />
