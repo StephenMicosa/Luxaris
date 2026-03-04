@@ -40,9 +40,9 @@ export default function Footer() {
                         Rejoignez nos partenaires et clients qui connaissent déjà la croissance avec Luxaris
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                        <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-rose-950 transition">
+                        <Link to="/contact" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-rose-950 transition">
                             Contactez nous
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -59,41 +59,41 @@ export default function Footer() {
 
                         {/* Column 1 */}
                         <div className="flex flex-col gap-4">
-                            <a href="#" className="text-sm text-slate-600 hover:text-slate-900 transition">
+                            <Link to="/" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 Accueil
-                            </a>
-                            <a href="#" className="text-sm text-slate-600 hover:text-slate-900 transition">
+                            </Link>
+                            <Link to="/about" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 À propos
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Column 2 */}
                         <div className="flex flex-col gap-4">
-                            <a href="#" className="text-sm text-slate-600 hover:text-slate-900 transition">
+                            <Link to="/pricing" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 Tarifs
-                            </a>
-                            <a href="#" className="text-sm text-slate-600 hover:text-slate-900 transition">
+                            </Link>
+                            <Link to="/contact" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 Contact
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Column 3 */}
                         <div className="flex flex-col gap-4">
-                            <a href="#" className="text-sm text-slate-600 hover:text-slate-900 transition">
+                            <Link to="/faq" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 FAQ
-                            </a>
-                            <a href="#" className="text-sm text-slate-600 hover:text-slate-900 transition">
+                            </Link>
+                            <Link to="/privacy" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 Politique de confidentialité
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
-          {/* Ligne de séparation */}
-          <div className="mt-10 border-t border-slate-200 pt-6 text-center text-xs text-slate-600">
-            © 2026 Luxaris. Tous droits réservés.
-          </div>
-        </div>
-      </footer>
-    </>
-  );
+                    {/* Ligne de séparation */}
+                    <div className="mt-10 border-t border-slate-200 pt-6 text-center text-xs text-slate-600">
+                        © 2026 Luxaris. Tous droits réservés.
+                    </div>
+                </div>
+            </footer>
+        </>
+    );
 }

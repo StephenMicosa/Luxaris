@@ -13,7 +13,7 @@ export default function About() {
   return (
     <main className="bg-white">
       {/* HERO TEXTE AU MILIEU (sans 2ème image en dessous) */}
-      <section className="relative min-h-[520px] flex items-center justify-center overflow-hidden bg-[#fbf8fb]">
+      <section className="relative min-h-130 flex items-center justify-center overflow-hidden bg-[#fbf8fb]">
         <div className="absolute inset-0 opacity-40">
           {/* Grille légère */}
           <div

@@ -21,7 +21,6 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/pricing" element={<Tarifs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQPage />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>

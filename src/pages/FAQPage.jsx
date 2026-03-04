@@ -16,7 +16,7 @@ export default function FAQPage() {
             >
                 <div className="max-w-4xl mx-auto w-full space-y-6">
                     <div className="text-center space-y-2 md:space-y-4">
-                        <FAQTitle/>
+                        <FAQTitle />
                         <h1 className="text-3xl md:text-5xl font-bold text-[#4A001A] leading-tight">
                             Centre d&apos;aide
                         </h1>
@@ -29,14 +29,13 @@ export default function FAQPage() {
                 </div>
             </section>
 
-            {/* Search and FAQ Section */}
             <section className="px-4 py-12 md:py-16 bg-slate-50">
                 <div className="max-w-3xl mx-auto w-full space-y-12">
-                    <FAQHeader/>
+                    <FAQHeader />
                     <FAQAccordion />
                 </div>
             </section>
-        
+
         </div>
     );
 }
