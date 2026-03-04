@@ -1,5 +1,6 @@
 import heroBg from "../../assets/Hero.png";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const heroStyles = `
@@ -80,9 +81,9 @@ export default function Hero() {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center hero-animate-2">
-                            <button className="w-full sm:w-auto px-8 py-3 bg-white border border-slate-300 rounded-xl font-semibold text-[#4A001A] text-base shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
+                            <Link to="/contact" className="w-full sm:w-auto px-8 py-3 bg-white border border-slate-300 rounded-xl font-semibold text-[#4A001A] text-base shadow-sm hover:shadow-md hover:-translate-y-0.5 transition inline-block text-center">
                                 Contactez nous
-                            </button>
+                            </Link>
 
                         </div>
                     </div>

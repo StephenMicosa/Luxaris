@@ -69,7 +69,7 @@ export const aiMannequinsData = [
         name: "Pack IA – Signature",
         badge: { text: "Populaire", color: "rose" },
         dotColor: "rose-600",
-        details: [{ text: "1 mannequin irréel + 10 photos studio premium" }],
+        details: [{ text: "1 mannequin irréel + 10 photos studio" }],
         prices: [{ amount: "1 700 €", color: "[#4A001A]", size: "2xl" }]
     },
     {
@@ -87,22 +87,6 @@ export const aiMannequinsData = [
         dotColor: "rose-700",
         details: [{ text: "5 photos supplémentaires" }],
         prices: [{ amount: "350 €", color: "rose-700", size: "xl" }]
-    },
-    {
-        id: 4,
-        name: "Vidéo IA courte",
-        badge: null,
-        dotColor: "slate-900",
-        details: [{ text: "10–15 sec (studio)" }],
-        prices: [{ amount: "400 €", color: "slate-900", size: "xl" }]
-    },
-    {
-        id: 5,
-        name: "Vidéo IA premium",
-        badge: { text: "Cinématique", color: "slate" },
-        dotColor: "slate-900",
-        details: [{ text: "Campagne mode / cinématique" }],
-        prices: [{ amount: "800 – 1 100 €", color: "slate-900", size: "xl" }]
     },
     {
         id: 6,
