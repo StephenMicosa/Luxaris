@@ -44,8 +44,20 @@ const faqStyles = `
 `;
 
 export default function FAQAccordion() {
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndices, setOpenIndices] = useState(new Set());
     const scrollRef = useScrollAnimation();
+
+    const toggleOpen = (index) => {
+        setOpenIndices(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(index)) {
+                newSet.delete(index);
+            } else {
+                newSet.add(index);
+            }
+            return newSet;
+        });
+    };
 
     return (
         <>
@@ -61,10 +73,10 @@ export default function FAQAccordion() {
                                 {item.question}
                             </span>
                             <button
-                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                onClick={() => toggleOpen(index)}
                                 className="shrink-0 hover:text-[#4A001A] transition-colors duration-300 ml-3"
                             >
-                                {openIndex === index ? (
+                                {openIndices.has(index) ? (
                                     <Minus className="h-5 w-5 sm:h-6 sm:w-6 border rounded-md mx-5 bg-rose-50 text-[#4A001A] transition-transform duration-500 rotate-0" />
                                 ) : (
                                     <Plus className="h-5 w-5 sm:h-6 sm:w-6 border rounded-md mx-5 text-slate-400 transition-transform duration-500 rotate-0" />
@@ -73,9 +85,8 @@ export default function FAQAccordion() {
                         </div>
 
                         <div
-                            className={`overflow-hidden transition-all duration-600 ease-in-out ${
-                                openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                            }`}
+                            className={`overflow-hidden transition-all duration-600 ease-in-out ${openIndices.has(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                }`}
                         >
                             <div className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed ml-8 sm:ml-10">
                                 {item.answer}
