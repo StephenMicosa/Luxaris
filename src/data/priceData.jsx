@@ -32,7 +32,7 @@ export const realMannequinsData = [
     {
         id: 4,
         name: "Sélection express",
-        badge: { text: "⚡ Option rapide", color: "rose" },
+        badge: { text: "Option rapide", color: "rose" },
         dotColor: "rose-600",
         details: [{ text: "Casting sous 48h" }],
         prices: [{ amount: "+150 €", color: "rose-600", size: "xl" }]
@@ -48,7 +48,7 @@ export const realMannequinsData = [
     {
         id: 6,
         name: "Exclusivité mannequin",
-        badge: { text: "👑 Premium", color: "rose" },
+        badge: { text: "Premium", color: "rose" },
         dotColor: "rose-800",
         details: [{ text: "Non-utilisation pour concurrents (temps limité)" }],
         prices: [{ amount: "+300 à 600 €", color: "rose-800", size: "xl" }]
@@ -67,7 +67,7 @@ export const aiMannequinsData = [
     {
         id: 1,
         name: "Pack IA – Signature",
-        badge: { text: "⭐ Populaire", color: "rose" },
+        badge: { text: "Populaire", color: "rose" },
         dotColor: "rose-600",
         details: [{ text: "1 mannequin irréel + 10 photos studio premium" }],
         prices: [{ amount: "1 700 €", color: "[#4A001A]", size: "2xl" }]
@@ -99,7 +99,7 @@ export const aiMannequinsData = [
     {
         id: 5,
         name: "Vidéo IA premium",
-        badge: { text: "🎬 Cinématique", color: "slate" },
+        badge: { text: "Cinématique", color: "slate" },
         dotColor: "slate-900",
         details: [{ text: "Campagne mode / cinématique" }],
         prices: [{ amount: "800 – 1 100 €", color: "slate-900", size: "xl" }]
@@ -107,7 +107,7 @@ export const aiMannequinsData = [
     {
         id: 6,
         name: "Exclusivité mannequin IA",
-        badge: { text: "🔒 Exclusif", color: "rose" },
+        badge: { text: "Exclusif", color: "rose" },
         dotColor: "rose-800",
         details: [{ text: "Mannequin non réutilisé" }],
         prices: [{ amount: "+700 €", color: "rose-800", size: "xl" }]
