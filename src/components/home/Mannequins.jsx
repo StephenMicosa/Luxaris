@@ -1,7 +1,4 @@
-import { useState } from "react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import { mannequinTypes } from "../../data/mannequinsData";
-import MannequinMenu from "./MannequinMenu";
 import MannequinGrid from "./MannequinGrid";
 
 const mannequinStyles = `
@@ -36,8 +33,7 @@ const mannequinStyles = `
   }
   
   .mannequin-card {
-    animation: slideInRight 0.6s ease-out forwards;
-    opacity: 0;
+    animation: slideInRight 0.6s ease-out both;
   }
   
   .mannequin-card:nth-child(1) { animation-delay: 0s; }
@@ -46,10 +42,22 @@ const mannequinStyles = `
   .mannequin-card:nth-child(4) { animation-delay: 0.3s; }
   .mannequin-card:nth-child(5) { animation-delay: 0.4s; }
   .mannequin-card:nth-child(6) { animation-delay: 0.5s; }
+  .mannequin-card:nth-child(7) { animation-delay: 0.6s; }
+  .mannequin-card:nth-child(8) { animation-delay: 0.7s; }
+  .mannequin-card:nth-child(9) { animation-delay: 0.8s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-slide-in-left,
+    .animate-slide-in-right,
+    .mannequin-card {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 `;
 
 export default function Mannequins() {
-    const [activeIndex, setActiveIndex] = useState(0);
     const scrollRef = useScrollAnimation();
 
     return (
@@ -68,8 +76,7 @@ export default function Mannequins() {
                         pour accompagner votre succès.
                     </p>
 
-                    <div className="flex flex-col md:flex-row gap-12 items-start">
-                        <MannequinMenu activeIndex={activeIndex} setActiveIndex={setActiveIndex} mannequinTypes={mannequinTypes} />
+                    <div className="flex justify-center">
                         <MannequinGrid />
                     </div>
                 </div>
