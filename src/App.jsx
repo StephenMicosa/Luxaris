@@ -15,6 +15,8 @@ import Home from "./pages/Home";
 const About = lazy(() => import("./pages/About"));
 const Tarifs = lazy(() => import("./pages/Tarifs.jsx"));
 const Contact = lazy(() => import("./pages/Contact"));
+const ContactFooter = lazy(() => import("./pages/ContactFooter.jsx"));
+const ContactSimple = lazy(() => import("./pages/ContactSimple"));
 const FAQPage = lazy(() => import("./pages/FAQPage.jsx"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Admin = lazy(() => import("./pages/Admin.jsx"));
@@ -37,6 +39,8 @@ export default function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/pricing" element={<Tarifs />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/contact-footer" element={<ContactFooter />} />
+                <Route path="/contactez-nous" element={<ContactSimple />} />
                 <Route path="/faq" element={<FAQPage />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/admin" element={<Admin />} />

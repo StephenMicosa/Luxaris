@@ -32,42 +32,43 @@ const clientStyles = `
 `;
 
 export default function Clients() {
-    const scrollRef = useScrollAnimation();
-    return (
-        <>
-            <style>{clientStyles}</style>
-            <section className="w-full bg-[#fbf8fb] py-16 px-4 animate-scroll" ref={scrollRef}>
-                <div className="max-w-6xl mx-auto flex flex-col gap-10">
-                    <div className="text-center space-y-3 animate-fade-in-scale">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-rose-900">Nos clients</p>
-                        <h2 className="text-3xl md:text-4xl font-bold text-rose-950 leading-tight">
-                            Découvrez ce que disent <br className="hidden md:block" /> nos clients
-                        </h2>
-                    </div>
+  const scrollRef = useScrollAnimation();
 
-                    {/* Grille desktop */}
-                    <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {testimonials.map((item) => (
-                            <TestimonialCard key={item.name} item={item} />
-                        ))}
-                    </div>
+  return (
+    <>
+      <style>{clientStyles}</style>
+      <section className="w-full bg-[#fbf8fb] py-16 px-4 animate-scroll" ref={scrollRef}>
+        <div className="max-w-6xl mx-auto flex flex-col gap-10">
+          <div className="text-center space-y-3 animate-fade-in-scale">
+            <p className="text-xs font-semibold uppercase tracking-wide text-rose-900">
+              Nos marques / collaborations
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-rose-950 leading-tight">
+              Découvrez les retours de nos <br className="hidden md:block" /> collaborations
+            </h2>
+          </div>
 
-                    {/* Carrousel vertical mobile */}
-                    <div className="md:hidden max-h-130 overflow-y-auto snap-y snap-mandatory pr-1 flex flex-col gap-4">
-                        {testimonials.map((item) => (
-                            <div key={item.name} className="snap-start">
-                                <TestimonialCard item={item} />
-                            </div>
-                        ))}
-                    </div>
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((item) => (
+              <TestimonialCard key={item.name} item={item} />
+            ))}
+          </div>
 
-                    <div className="flex justify-center">
-                        <button className="px-5 py-2 rounded-full bg-rose-950 text-white font-semibold text-sm shadow hover:bg-rose-900 transition">
-                            Tous les témoignages
-                        </button>
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+          <div className="md:hidden max-h-130 overflow-y-auto snap-y snap-mandatory pr-1 flex flex-col gap-4">
+            {testimonials.map((item) => (
+              <div key={item.name} className="snap-start">
+                <TestimonialCard item={item} />
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <button className="px-5 py-2 rounded-full bg-rose-950 text-white font-semibold text-sm shadow hover:bg-rose-900 transition">
+              Voir plus
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

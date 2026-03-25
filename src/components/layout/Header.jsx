@@ -68,7 +68,7 @@ export default function Header() {
 
                     <div className="hidden items-center md:flex">
                         <Link
-                            to="/contact"
+                            to="/contact-footer"
                             className="rounded-lg border border-[#4A001A] bg-[#4A001A] px-5 py-2 text-xs font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                         >
                             Contactez-nous
