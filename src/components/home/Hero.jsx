@@ -22,9 +22,9 @@ const heroStyles = `
     }
   }
   
-    .hero-animate { opacity: 0; }
-    .hero-animate-1 { opacity: 0; }
-    .hero-animate-2 { opacity: 0; }
+    .hero-animate { opacity: 1; }
+    .hero-animate-1 { opacity: 1; }
+    .hero-animate-2 { opacity: 1; }
 
     .animate-scroll .hero-animate {
         animation: fadeInUp 0.8s ease-out forwards;

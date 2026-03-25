@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import LazyImage from "../common/LazyImage";
 import logo from "../../assets/logo.png";
 import logoWebp from "../../assets/logo-converted-from-png.webp";
 import logoMd from "../../assets/logo-md.jpg";
@@ -31,16 +30,27 @@ export default function Header() {
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
                     <div className="flex items-center gap-2">
                         <Link to="/" className="flex items-center gap-2">
-                            <LazyImage
-                                src={logo}
-                                srcWebp={logoWebp}
-                                srcMd={logoMd}
-                                srcMdWebp={logoMdWebp}
-                                alt="Luxaris Logo"
-                                width={80}
-                                height={32}
-                                className="h-8 w-auto"
-                            />
+                            <picture className="contents">
+                                <source
+                                    srcSet={`${logoWebp} 80w, ${logoMdWebp} 160w`}
+                                    type="image/webp"
+                                    sizes="80px"
+                                />
+                                <source
+                                    srcSet={`${logo} 80w, ${logoMd} 160w`}
+                                    sizes="80px"
+                                />
+                                <img
+                                    src={logoWebp || logo}
+                                    alt="Luxaris Logo"
+                                    width={80}
+                                    height={32}
+                                    loading="eager"
+                                    fetchPriority="high"
+                                    decoding="sync"
+                                    className="h-8 w-auto"
+                                />
+                            </picture>
                         </Link>
                     </div>
 

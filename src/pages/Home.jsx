@@ -1,9 +1,32 @@
 import { Helmet } from 'react-helmet-async';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import Hero from "../components/home/Hero.jsx";
-import Mannequins from "../components/home/Mannequins.jsx";
-import Clients from "../components/home/Clients.jsx";
+
+const Mannequins = lazy(() => import("../components/home/Mannequins.jsx"));
+const Clients = lazy(() => import("../components/home/Clients.jsx"));
 
 export default function Home() {
+    const [showBelowFold, setShowBelowFold] = useState(false);
+    const triggerRef = useRef(null);
+
+    useEffect(() => {
+        const node = triggerRef.current;
+        if (!node || showBelowFold) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShowBelowFold(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '300px 0px' }
+        );
+
+        observer.observe(node);
+        return () => observer.disconnect();
+    }, [showBelowFold]);
+
     return (
         <>
             <Helmet>
@@ -20,8 +43,14 @@ export default function Home() {
             </Helmet>
 
             <Hero />
-            <Mannequins />
-            <Clients />
+            <div ref={triggerRef} aria-hidden="true" className="h-px w-full" />
+
+            {showBelowFold && (
+                <Suspense fallback={<div className="min-h-60" aria-hidden="true" />}>
+                    <Mannequins />
+                    <Clients />
+                </Suspense>
+            )}
         </>
     );
 }

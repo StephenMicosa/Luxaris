@@ -13,6 +13,7 @@ export default function OptimizedHeroImage({
     className = '',
     width = 1920,
     height = 1080,
+    sizes = '100vw',
 }) {
     return (
         <picture className="contents">
@@ -20,12 +21,12 @@ export default function OptimizedHeroImage({
             <source
                 srcSet={`${srcWebp} 640w, ${srcMdWebp} 1024w, ${srcLgWebp} 1920w`}
                 type="image/webp"
-                sizes="100vw"
+                sizes={sizes}
             />
             {/* JPEG fallback */}
             <source
                 srcSet={`${src} 640w, ${srcMd} 1024w, ${srcLg} 1920w`}
-                sizes="100vw"
+                sizes={sizes}
             />
             {/* Image */}
             <img
@@ -35,6 +36,7 @@ export default function OptimizedHeroImage({
                 height={height}
                 className={`${className} object-cover`}
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
             />
         </picture>

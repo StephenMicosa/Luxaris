@@ -37,9 +37,7 @@ export default function Privacy() {
         <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8 rounded">
           <p className="text-sm text-amber-800">
             <strong>⚠️ Contenu temporaire :</strong> Cette page contient un contenu temporaire en attente de validation par nos équipes de direction et de conception. Le contenu définitif sera publié prochainement.
-          </p>et sécurisée dédiée au secteur du mannequinat et de la modélisation.
-          Cette <strong>politique de confidentialité</strong> (« Luxaris », « Société », « nous », « notre » ou « nos »)
-          décrit en détail
+          </p>
           <p className="mb-6">
             <strong>Luxaris</strong> est une plateforme innovante dédiée au secteur du mannequinat et de la modélisation.
             Cette politique de confidentialité (« Luxaris », « Société », « nous », « notre » ou « nos »)
