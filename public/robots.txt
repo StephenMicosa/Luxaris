@@ -1,0 +1,20 @@
+# Configuration Robots pour Luxaris
+# Autoriser tous les robots sauf la section admin
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /pricing
+Allow: /contact
+Allow: /faq
+Allow: /privacy
+Disallow: /admin
+
+# Plan du site
+Sitemap: https://luxaris.fr/sitemap.xml
+
+# Délai de navigation (en secondes) - optionnel
+Crawl-delay: 1
+
+# Commentaires
+# La section admin est interdite pour éviter l'indexation de l'interface administrative

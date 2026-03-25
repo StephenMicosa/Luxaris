@@ -1,7 +1,14 @@
-import heroBg from "../../assets/Hero.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import OptimizedHeroImage from "../common/OptimizedHeroImage";
+import heroBg from "../../assets/Hero.png";
+import heroSm from "../../assets/Hero-sm.jpg";
+import heroMd from "../../assets/Hero-md.jpg";
+import heroLg from "../../assets/Hero-lg.jpg";
+import heroSmWebp from "../../assets/Hero-sm.webp";
+import heroMdWebp from "../../assets/Hero-md.webp";
+import heroLgWebp from "../../assets/Hero-lg.webp";
 
 const heroStyles = `
   @keyframes fadeInUp {
@@ -50,15 +57,24 @@ export default function Hero() {
             <section
                 ref={scrollRef}
                 className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-24"
-                style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
             >
-                {/* Background decoration */}
+                <OptimizedHeroImage
+                    src={heroSm}
+                    srcWebp={heroSmWebp}
+                    srcMd={heroMd}
+                    srcMdWebp={heroMdWebp}
+                    srcLg={heroLg}
+                    srcLgWebp={heroLgWebp}
+                    alt="Luxaris Hero Banner"
+                    className="absolute inset-0 w-full h-full"
+                />
+                {/* Décoration de fond */}
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-1/4 w-96 h-96 bg-rose-200 rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-200 rounded-full blur-3xl"></div>
                 </div>
 
-                {/* Content with zoom out on scroll */}
+                {/* Contenu avec zoom out au scroll */}
                 <div
                     className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center md:px-6"
                     style={{
@@ -66,7 +82,7 @@ export default function Hero() {
                         transformOrigin: 'center center'
                     }}
                 >
-                    {/* Border box decoration */}
+                    {/* Décoration boîte de bordure */}
                     <div className="rounded-lg p-8 bg-transparent md:p-14">
                         <h1 className="text-4xl md:text-6xl font-bold text-[#4A001A] mb-6 md:mb-8 leading-tight hero-animate">
                             Une nouvelle vision du <br />
@@ -79,7 +95,7 @@ export default function Hero() {
                             Une nouvelle géneration de mannequins au service de la creativité et de la performance des marques
                         </p>
 
-                        {/* CTA Buttons */}
+                        {/* Boutons CTA */}
                         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center hero-animate-2">
                             <Link to="/contact" className="w-full sm:w-auto px-8 py-3 bg-white border border-slate-300 rounded-xl font-semibold text-[#4A001A] text-base shadow-sm hover:shadow-md hover:-translate-y-0.5 transition inline-block text-center">
                                 Contactez nous

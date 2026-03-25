@@ -74,6 +74,8 @@ export default function FAQAccordion() {
                             </span>
                             <button
                                 onClick={() => toggleOpen(index)}
+                                aria-label={openIndices.has(index) ? `Fermer la question: ${item.question}` : `Ouvrir la question: ${item.question}`}
+                                aria-expanded={openIndices.has(index)}
                                 className="shrink-0 hover:text-[#4A001A] transition-colors duration-300 ml-3"
                             >
                                 {openIndices.has(index) ? (

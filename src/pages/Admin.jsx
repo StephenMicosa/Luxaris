@@ -89,7 +89,7 @@ export default function Admin() {
 
     return (
         <main className="min-h-screen bg-slate-50 flex">
-            {/* Sidebar Navigation */}
+            {/* Navigation dans la barre latérale */}
             <aside className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} overflow-y-auto`}>
                 <div className="p-6 border-b border-slate-200">
                     <h2 className="text-xl font-bold text-[#4A001A]">Luxaris</h2>
@@ -107,8 +107,8 @@ export default function Admin() {
                                     setMobileMenuOpen(false);
                                 }}
                                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${currentSection === item.id
-                                        ? 'bg-[#4A001A] text-white'
-                                        : 'text-slate-700 hover:bg-slate-100'
+                                    ? 'bg-[#4A001A] text-white'
+                                    : 'text-slate-700 hover:bg-slate-100'
                                     }`}
                             >
                                 <Icon className="h-5 w-5" />
@@ -129,7 +129,7 @@ export default function Admin() {
                 </div>
             </aside>
 
-            {/* Mobile Menu Overlay */}
+            {/* Superposition du menu mobile */}
             {mobileMenuOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
@@ -137,9 +137,9 @@ export default function Admin() {
                 />
             )}
 
-            {/* Main Content */}
+            {/* Contenu principal */}
             <div className="flex-1 flex flex-col">
-                {/* Header */}
+                {/* En-tête */}
                 <header className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
                     <div className="px-4 md:px-6 py-4 flex items-center justify-between">
                         <div className="flex items-center gap-4">
@@ -163,7 +163,7 @@ export default function Admin() {
                     </div>
                 </header>
 
-                {/* Content Area */}
+                {/* Zone de contenu */}
                 <div className="flex-1 p-4 md:p-6 overflow-auto">
                     {currentSection === 'dashboard' && (
                         <div className="space-y-6">

@@ -1,23 +1,32 @@
-import heroBg from "../assets/Hero.png";
+import heroBg from "../../assets/Hero.png";
+import heroSm from "../../assets/Hero-sm.jpg";
+import heroMd from "../../assets/Hero-md.jpg";
+import heroLg from "../../assets/Hero-lg.jpg";
+import heroSmWebp from "../../assets/Hero-sm.webp";
+import heroMdWebp from "../../assets/Hero-md.webp";
+import heroLgWebp from "../../assets/Hero-lg.webp";
+import OptimizedHeroImage from "../common/OptimizedHeroImage";
 
 export default function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Background decoration */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <OptimizedHeroImage
+        src={heroSm}
+        srcWebp={heroSmWebp}
+        srcMd={heroMd}
+        srcMdWebp={heroMdWebp}
+        srcLg={heroLg}
+        srcLgWebp={heroLgWebp}
+        alt="Luxaris Hero Banner"
+        className="absolute inset-0 w-full h-full"
+      />
+      {/* Décoration de fond */}
       <div className="absolute inset-0 opacity-30 bg-black/40">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-rose-200 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-200 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Content */}
+      {/* Contenu */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <div className="rounded-lg p-14 bg-transparent">
           <h1 className="text-5xl md:text-6xl font-bold text-[#4A001A] mb-8 leading-tight">
@@ -31,7 +40,7 @@ export default function Hero() {
             Une nouvelle géneration de mannequins au service de la creativité et de la performance des marques
           </p>
 
-          {/* CTA Button (only contact) */}
+          {/* Bouton CTA (contact uniquement) */}
           <div className="flex justify-center items-center">
             <a
               href="/contact"

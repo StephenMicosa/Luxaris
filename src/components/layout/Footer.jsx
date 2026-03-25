@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
-import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import LazyImage from "../common/LazyImage";
+import logo from "../../assets/logo.png";
+import logoWebp from "../../assets/logo-converted-from-png.webp";
+import logoMd from "../../assets/logo-md.jpg";
+import logoMdWebp from "../../assets/logo-md.webp";
 
 const footerStyles = `
   @keyframes fadeInUp {
@@ -30,7 +34,7 @@ export default function Footer() {
     return (
         <>
             <style>{footerStyles}</style>
-            {/* Red Banner Section */}
+            {/* Section bannière rouge */}
             <div className="w-full bg-linear-to-b from-[#4A001A] to-rose-900 py-16 px-4 footer-banner">
                 <div className="mx-auto max-w-6xl flex flex-col items-center text-center gap-6">
                     <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -47,17 +51,26 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Footer */}
+            {/* Pied de page */}
             <footer className="w-full bg-white border-t border-slate-200 animate-scroll" ref={scrollRef}>
-                {/* Main Footer Content */}
+                {/* Contenu principal du pied de page */}
                 <div className="mx-auto max-w-6xl px-4 py-12 footer-content">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                         {/* Logo */}
                         <div className="flex items-center gap-2">
-                            <img src={logo} alt="Luxaris" className="h-8 w-auto" />
+                            <LazyImage
+                                src={logo}
+                                srcWebp={logoWebp}
+                                srcMd={logoMd}
+                                srcMdWebp={logoMdWebp}
+                                alt="Luxaris"
+                                width={80}
+                                height={32}
+                                className="h-8 w-auto"
+                            />
                         </div>
 
-                        {/* Column 1 */}
+                        {/* Colonne 1 */}
                         <div className="flex flex-col gap-4">
                             <Link to="/" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 Accueil
@@ -67,7 +80,7 @@ export default function Footer() {
                             </Link>
                         </div>
 
-                        {/* Column 2 */}
+                        {/* Colonne 2 */}
                         <div className="flex flex-col gap-4">
                             <Link to="/pricing" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 Tarifs
@@ -77,7 +90,7 @@ export default function Footer() {
                             </Link>
                         </div>
 
-                        {/* Column 3 */}
+                        {/* Colonne 3 */}
                         <div className="flex flex-col gap-4">
                             <Link to="/faq" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 FAQ

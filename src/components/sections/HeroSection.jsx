@@ -1,4 +1,4 @@
-import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const heroAnimationStyles = `
   @keyframes fadeInDown {

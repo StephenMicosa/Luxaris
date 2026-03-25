@@ -2,37 +2,9 @@ import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 export default function PricingCard({ type, isPopular = false }) {
     const scrollRef = useScrollAnimation();
-    const pricingStyles = `
-      @keyframes slideInUp {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .pricing-card {
-        animation: slideInUp 0.8s ease-out forwards;
-      }
-      
-      .pricing-card.standard {
-        animation-delay: 0.2s;
-        opacity: 0;
-      }
-      
-      .pricing-card.custom {
-        animation-delay: 0.4s;
-        opacity: 0;
-      }
-    `;
-    
+
     if (type === "standard") {
         return (
-            <>
-            <style>{pricingStyles}</style>
             <div className="bg-rose-950 text-white rounded-3xl p-8 shadow-xl relative flex flex-col pricing-card standard hover:shadow-2xl transition-shadow animate-scroll" ref={scrollRef}>
 
                 <h3 className="text-2xl font-bold mb-2">Standard</h3>
@@ -60,18 +32,15 @@ export default function PricingCard({ type, isPopular = false }) {
                     </li>
                 </ul>
 
-                <button className="w-full bg-white text-rose-950 font-semibold py-3 rounded-lg hover:bg-rose-50 transition">
+                <button className="w-full bg-rose-950 text-white font-semibold py-3 rounded-lg hover:bg-rose-900 transition" aria-label="Commencer avec le forfait Standard">
                     Se lancer
                 </button>
             </div>
-            </>
         );
     }
 
     if (type === "custom") {
         return (
-            <>
-            <style>{pricingStyles}</style>
             <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 shadow-lg flex flex-col pricing-card custom hover:shadow-xl transition-shadow animate-scroll" ref={scrollRef}>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Sur mesure</h3>
                 <p className="text-slate-600 text-sm mb-6">Découvrez le Maquinat 2.0 !</p>
@@ -116,11 +85,10 @@ export default function PricingCard({ type, isPopular = false }) {
                     </li>
                 </ul>
 
-                <button className="w-full bg-rose-950 text-white font-semibold py-3 rounded-lg hover:bg-rose-900 transition">
+                <button className="w-full bg-rose-950 text-white font-semibold py-3 rounded-lg hover:bg-rose-900 transition" aria-label="Contacter les commerciaux pour un forfait surpuissant\">
                     Contactez nos commerciaux
                 </button>
             </div>
-            </>
         );
     }
 }

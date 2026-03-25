@@ -45,14 +45,14 @@ export default function Clients() {
                         </h2>
                     </div>
 
-                    {/* Desktop grid */}
+                    {/* Grille desktop */}
                     <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {testimonials.map((item) => (
                             <TestimonialCard key={item.name} item={item} />
                         ))}
                     </div>
 
-                    {/* Mobile vertical carousel */}
+                    {/* Carrousel vertical mobile */}
                     <div className="md:hidden max-h-130 overflow-y-auto snap-y snap-mandatory pr-1 flex flex-col gap-4">
                         {testimonials.map((item) => (
                             <div key={item.name} className="snap-start">

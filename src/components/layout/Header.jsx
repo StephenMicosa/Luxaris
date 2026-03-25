@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"
+import LazyImage from "../common/LazyImage";
+import logo from "../../assets/logo.png";
+import logoWebp from "../../assets/logo-converted-from-png.webp";
+import logoMd from "../../assets/logo-md.jpg";
+import logoMdWebp from "../../assets/logo-md.webp";
 
 const navLinks = [
     { label: "À propos", path: "/about" },
@@ -27,7 +31,16 @@ export default function Header() {
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
                     <div className="flex items-center gap-2">
                         <Link to="/" className="flex items-center gap-2">
-                            <img src={logo} alt="Luxaris Log" className="h-8 w-auto" />
+                            <LazyImage
+                                src={logo}
+                                srcWebp={logoWebp}
+                                srcMd={logoMd}
+                                srcMdWebp={logoMdWebp}
+                                alt="Luxaris Logo"
+                                width={80}
+                                height={32}
+                                className="h-8 w-auto"
+                            />
                         </Link>
                     </div>
 
@@ -73,7 +86,7 @@ export default function Header() {
                     </button>
                 </div>
 
-                {/* Mobile dropdown menu (below header) */}
+                {/* Menu déroulant mobile (sous l'en-têt) */}
 
                 <div
                     className={`absolute left-0 right-0 top-full z-50 md:hidden overflow-hidden bg-transparent border-t transition-all duration-300 ease-out ${open ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"}`}

@@ -62,7 +62,7 @@ export default function ContactForm() {
                         />
                     </div>
 
-                    {/* TELEPHONE */}
+                    {/* TÉLÉPHONE */}
                     <div className="form-input" style={{ animationDelay: '0.5s' }}>
                         <label className="text-sm text-slate-600">
                             Numéro de téléphone
@@ -105,7 +105,7 @@ export default function ContactForm() {
                         ></textarea>
                     </div>
 
-                    {/* BUTTON */}
+                    {/* BOUTON */}
                     <button
                         type="submit"
                         className="form-input w-full mt-4 bg-[#4A001A] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"

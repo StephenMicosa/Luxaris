@@ -1,3 +1,141 @@
 #root {
   width: 100%;
 }
+
+/* ============================================
+   ANIMATIONS RÉUTILISABLES
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Classes d'animation réutilisables */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+/* Évite CLS : visible par défaut, pas opacity: 0 */
+.pricing-header {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.pricing-table {
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.pricing-card {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.pricing-card.standard {
+  animation-delay: 0.2s;
+}
+
+.pricing-card.custom {
+  animation-delay: 0.4s;
+}
+
+.feature-card {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.feature-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
