@@ -23,37 +23,45 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const genAI = API_KEY ? new GoogleGenerativeAI(API_KEY) : null;
 
 const MODELS = [
-  { id: 'F1', label: 'Modèle F1', poses: [
-    { id: 'F1_DB', src: F1_DB, name: 'Debout' },
-    { id: 'F1_AS', src: F1_AS, name: 'Assise' },
-    { id: 'F1_PC', src: F1_PC, name: 'Portrait' },
-    { id: 'F2_AL', src: F1_AL, name: 'Allongée' }
-  ]},
-  { id: 'F2', label: 'Modèle F2', poses: [
-    { id: 'F2_DB', src: F2_DB, name: 'Debout' },
-    { id: 'F2_AS', src: F2_AS, name: 'Assise' },
-    { id: 'F2_PC', src: F2_PC, name: 'Portrait' },
-    { id: 'F2_AL', src: F2_AL, name: 'Allongée' }
-  ]},
-  { id: 'H1', label: 'Modèle H1', poses: [
-    { id: 'H1_DB', src: H1_DB, name: 'Debout' },
-    { id: 'H1_AS', src: H1_AS, name: 'Assis' },
-    { id: 'H1_PC', src: H1_PC, name: 'Portrait' }
-  ]},
-  { id: 'H2', label: 'Modèle H2', poses: [
-    { id: 'H2_DB', src: H2_DB, name: 'Debout' },
-    { id: 'H2_AS', src: H2_AS, name: 'Assis' },
-    { id: 'H2_PC', src: H2_PC, name: 'Portrait' }
-  ]}
+  {
+    id: 'F1', label: 'Modèle F1', poses: [
+      { id: 'F1_DB', src: F1_DB, name: 'Debout' },
+      { id: 'F1_AS', src: F1_AS, name: 'Assise' },
+      { id: 'F1_PC', src: F1_PC, name: 'Portrait' },
+      { id: 'F2_AL', src: F1_AL, name: 'Allongée' }
+    ]
+  },
+  {
+    id: 'F2', label: 'Modèle F2', poses: [
+      { id: 'F2_DB', src: F2_DB, name: 'Debout' },
+      { id: 'F2_AS', src: F2_AS, name: 'Assise' },
+      { id: 'F2_PC', src: F2_PC, name: 'Portrait' },
+      { id: 'F2_AL', src: F2_AL, name: 'Allongée' }
+    ]
+  },
+  {
+    id: 'H1', label: 'Modèle H1', poses: [
+      { id: 'H1_DB', src: H1_DB, name: 'Debout' },
+      { id: 'H1_AS', src: H1_AS, name: 'Assis' },
+      { id: 'H1_PC', src: H1_PC, name: 'Portrait' }
+    ]
+  },
+  {
+    id: 'H2', label: 'Modèle H2', poses: [
+      { id: 'H2_DB', src: H2_DB, name: 'Debout' },
+      { id: 'H2_AS', src: H2_AS, name: 'Assis' },
+      { id: 'H2_PC', src: H2_PC, name: 'Portrait' }
+    ]
+  }
 ];
 
 export default function APIGoogle() {
   const [garmentFile, setGarmentFile] = useState(null);
   const [garmentPreview, setGarmentPreview] = useState(null);
-  
+
   const [selectedModelId, setSelectedModelId] = useState('F1');
-  const [selectedPose, setSelectedPose] = useState(MODELS[0].poses[0]); 
-  
+  const [selectedPose, setSelectedPose] = useState(MODELS[0].poses[0]);
+
   const [resultImage, setResultImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
@@ -92,11 +100,11 @@ export default function APIGoogle() {
 
   const handleModelChange = (model) => {
     setSelectedModelId(model.id);
-    setSelectedPose(model.poses[0]); 
+    setSelectedPose(model.poses[0]);
   };
 
   const handleRun = async () => {
-    if (!genAI) return alert("Clé API manquante ou invalide !");
+    if (!genAI) return alert("Clé API manquante ou invalide ! appeler ayoub au 0785552272 ou par teams ayoub.souri@ynov.com ");
     if (!garmentFile) return alert("Veuillez uploader un vêtement.");
 
     setLoading(true);
@@ -122,9 +130,9 @@ export default function APIGoogle() {
       setStatus("Génération en cours (environ 10s)...");
       const result = await model.generateContent([prompt, garmentPart, personPart]);
       const response = await result.response;
-      
+
       const imagePart = response.candidates[0].content.parts.find(p => p.inlineData);
-      
+
       if (imagePart) {
         setResultImage(`data:${imagePart.inlineData.mimeType};base64,${imagePart.inlineData.data}`);
       } else {
@@ -162,21 +170,21 @@ export default function APIGoogle() {
 
   return (
     <div style={{ maxWidth: '1200px', margin: '40px auto', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      
+
       <div style={{ display: 'flex', gap: '30px', alignItems: 'stretch', flexWrap: 'wrap', marginBottom: '40px' }}>
-        
+
         {/* COLONNE GAUCHE : VÊTEMENT */}
         <div style={{ ...boxStyle, flex: '1', display: 'flex', flexDirection: 'column' }}>
           <h3 style={titleStyle}>1. Votre Pièce</h3>
-          
+
           <div style={{ ...uploadZoneStyle, flex: '1', minHeight: '350px' }}>
             {garmentPreview ? (
               <img src={garmentPreview} alt="Vêtement" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '10px' }} />
             ) : (
               <span style={{ color: '#aaa', fontWeight: '500', fontSize: '1.1rem' }}>+ Ajouter une photo</span>
             )}
-            <input 
-              type="file" accept="image/*" onChange={handleGarmentUpload} 
+            <input
+              type="file" accept="image/*" onChange={handleGarmentUpload}
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0, cursor: 'pointer' }}
             />
           </div>
@@ -184,15 +192,15 @@ export default function APIGoogle() {
 
         {/* COLONNE DROITE : MANNEQUIN + POSE */}
         <div style={{ ...boxStyle, flex: '1', display: 'flex', flexDirection: 'column', gap: '30px' }}>
-          
+
           {/* ÉTAPE 2 : LE MANNEQUIN */}
           <div>
             <h3 style={titleStyle}>2. Le Mannequin</h3>
             {/* Grille ajustée pour des cadres verticaux */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '15px' }}>
               {MODELS.map((model) => (
-                <div 
-                  key={model.id} 
+                <div
+                  key={model.id}
                   onClick={() => handleModelChange(model)}
                   style={{
                     ...portraitContainerStyle,
@@ -212,7 +220,7 @@ export default function APIGoogle() {
             <h3 style={titleStyle}>3. La Pose</h3>
             <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
               {activeModel.poses.map((pose) => (
-                <div 
+                <div
                   key={pose.id}
                   onClick={() => setSelectedPose(pose)}
                   style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
@@ -238,17 +246,17 @@ export default function APIGoogle() {
 
       {/* BOUTON ACTION LUXARIS */}
       <div style={{ textAlign: 'center' }}>
-        <button 
-          onClick={handleRun} 
+        <button
+          onClick={handleRun}
           disabled={loading}
-          style={{ 
-            padding: '18px 56px', 
-            fontSize: '19px', 
-            fontWeight: '600', 
-            backgroundColor: loading ? '#ccc' : '#4a0b19', 
-            color: '#fff', 
-            border: 'none', 
-            borderRadius: '50px', 
+          style={{
+            padding: '18px 56px',
+            fontSize: '19px',
+            fontWeight: '600',
+            backgroundColor: loading ? '#ccc' : '#4a0b19',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '50px',
             cursor: loading ? 'not-allowed' : 'pointer',
             transition: 'all 0.3s ease',
             boxShadow: '0 6px 20px rgba(74, 11, 25, 0.35)'
@@ -271,29 +279,29 @@ export default function APIGoogle() {
 
 // Styles réutilisables pour les blocs
 const boxStyle = {
-  minWidth: '320px', 
-  backgroundColor: '#fdfdfd', 
-  padding: '35px', 
+  minWidth: '320px',
+  backgroundColor: '#fdfdfd',
+  padding: '35px',
   borderRadius: '24px',
   border: '1px solid #eaeaea',
   boxShadow: '0 4px 15px rgba(0,0,0,0.02)'
 };
 
 const titleStyle = {
-  marginTop: 0, 
-  marginBottom: '20px', 
-  fontSize: '1.2rem', 
+  marginTop: 0,
+  marginBottom: '20px',
+  fontSize: '1.2rem',
   fontWeight: '600',
   color: '#333'
 };
 
 const uploadZoneStyle = {
-  position: 'relative', 
-  border: '1.5px dashed #d0d0d0', 
-  borderRadius: '16px', 
-  display: 'flex', 
-  alignItems: 'center', 
-  justifyContent: 'center', 
+  position: 'relative',
+  border: '1.5px dashed #d0d0d0',
+  borderRadius: '16px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   backgroundColor: '#fff',
   overflow: 'hidden',
   transition: 'border 0.3s ease'

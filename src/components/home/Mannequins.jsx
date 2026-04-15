@@ -58,7 +58,7 @@ const mannequinStyles = `
 `;
 
 export default function Mannequins() {
-    const scrollRef = useScrollAnimation();
+  const scrollRef = useScrollAnimation();
 
   return (
     <>
@@ -80,15 +80,13 @@ export default function Mannequins() {
           <div className="max-w-5xl mx-auto text-center text-slate-600 mb-12 space-y-2 animate-slide-in-right">
             <p><strong>Défilé :</strong> pour les événements mode, présentations et catwalk.</p>
             <p><strong>Publicité :</strong> pour les campagnes visuelles, contenus digitaux et e-commerce.</p>
-            <p><strong>Fitness :</strong> pour les marques sport, bien-être et performance.</p>
-            <p><strong>Cabine :</strong> pour les essayages, fittings et développement produit.</p>
           </div>
 
-                    <div className="flex justify-center">
-                        <MannequinGrid />
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+          <div className="flex justify-center">
+            <MannequinGrid />
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
