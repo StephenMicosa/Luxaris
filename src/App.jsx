@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 
 // Charger en retard les pages non-critiques
 const About = lazy(() => import("./pages/About"));
+const AIMannequins = lazy(() => import("./pages/AIMannequins.jsx"));
 const Tarifs = lazy(() => import("./pages/Tarifs.jsx"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ContactFooter = lazy(() => import("./pages/ContactFooter.jsx"));
@@ -40,6 +41,7 @@ export default function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/pricing" element={<Tarifs />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/ai-models" element={<AIMannequins />} />
                 <Route path="/contact-footer" element={<ContactFooter />} />
                 <Route path="/contactez-nous" element={<ContactSimple />} />
                 <Route path="/faq" element={<FAQPage />} />
