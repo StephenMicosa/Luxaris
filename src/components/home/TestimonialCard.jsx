@@ -1,18 +1,21 @@
-import Stars from "./Stars";
-import LazyImage from "../common/LazyImage";
-
 export default function TestimonialCard({ item }) {
     return (
-        <article className="bg-white border border-slate-100 shadow-sm rounded-2xl p-5 flex flex-col gap-4 hover:shadow-md transition-shadow testimonial-card">
-            <Stars value={item.rating} />
-            <p className="text-slate-700 text-sm leading-relaxed">{item.text}</p>
-            <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-slate-200 overflow-hidden">
-                    <LazyImage src={item.avatar} alt={item.name} width={40} height={40} className="h-full w-full object-cover" />
+        <article className="group relative overflow-hidden rounded-4xl border border-white/60 bg-white/88 p-6 shadow-[0_14px_32px_rgba(52,15,30,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(52,15,30,0.14)] testimonial-card">
+            <div className="absolute inset-0 bg-linear-to-br from-rose-50/80 via-white to-amber-50/70 opacity-90" aria-hidden="true" />
+            <div className="relative flex h-full flex-col gap-4">
+                <div className="flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.28em] text-rose-900/70">
+                    <span>{item.label}</span>
+                    <span className="text-3xl leading-none text-rose-200">&ldquo;</span>
                 </div>
-                <div className="leading-tight">
-                    <p className="text-sm font-semibold text-slate-900">{item.name}</p>
-                    <p className="text-xs text-slate-500">{item.role}</p>
+                <p className="text-[1.05rem] leading-8 text-slate-800">{item.text}</p>
+                <div className="mt-auto pt-3 border-t border-rose-100/80 flex items-center justify-between gap-3">
+                    <div>
+                        <p className="text-sm font-semibold text-slate-950">{item.name}</p>
+                        <p className="text-xs text-slate-500">{item.role}</p>
+                    </div>
+                    <span className="rounded-full border border-rose-200 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">
+                        Luxaris
+                    </span>
                 </div>
             </div>
         </article>
