@@ -6,9 +6,11 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import F1_AS from '../../assets/Mannequin/femme(F)/F1_CPA_AS.png';
 import F1_DB from '../../assets/Mannequin/femme(F)/F1_DB_PL.png';
 import F1_PC from '../../assets/Mannequin/femme(F)/F1_PC.png';
+import F1_AL from '../../assets/Mannequin/femme(F)/F1_AL.png';
 import F2_AS from '../../assets/Mannequin/femme(F)/F2_CPA_AS.png';
 import F2_DB from '../../assets/Mannequin/femme(F)/F2_DB_PL.png';
 import F2_PC from '../../assets/Mannequin/femme(F)/F2_PC.png';
+import F2_AL from '../../assets/Mannequin/femme(F)/F2_AL.png';
 // HOMMES
 import H1_AS from '../../assets/Mannequin/homme(H)/H1_CPA_AS.png';
 import H1_DB from '../../assets/Mannequin/homme(H)/H1_DB_PL.png';
@@ -24,12 +26,14 @@ const MODELS = [
   { id: 'F1', label: 'Modèle F1', poses: [
     { id: 'F1_DB', src: F1_DB, name: 'Debout' },
     { id: 'F1_AS', src: F1_AS, name: 'Assise' },
-    { id: 'F1_PC', src: F1_PC, name: 'Portrait' }
+    { id: 'F1_PC', src: F1_PC, name: 'Portrait' },
+    { id: 'F2_AL', src: F1_AL, name: 'Allongée' }
   ]},
   { id: 'F2', label: 'Modèle F2', poses: [
     { id: 'F2_DB', src: F2_DB, name: 'Debout' },
     { id: 'F2_AS', src: F2_AS, name: 'Assise' },
-    { id: 'F2_PC', src: F2_PC, name: 'Portrait' }
+    { id: 'F2_PC', src: F2_PC, name: 'Portrait' },
+    { id: 'F2_AL', src: F2_AL, name: 'Allongée' }
   ]},
   { id: 'H1', label: 'Modèle H1', poses: [
     { id: 'H1_DB', src: H1_DB, name: 'Debout' },
