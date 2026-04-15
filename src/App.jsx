@@ -8,6 +8,7 @@ import Footer from "./components/layout/Footer.jsx";
 import PageLoader from "./components/common/PageLoader.jsx";
 import { usePageLifecycle } from "./hooks/usePageLifecycle.js";
 
+
 // Charger en priorité les pages critiques
 import Home from "./pages/Home";
 

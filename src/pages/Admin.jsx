@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Lock, LogOut, Menu, X, LayoutDashboard, Users, Settings, BarChart3, Palette, DollarSign } from 'lucide-react';
+import APIGoogle from "../components/AI-API/API-Google.jsx";
 
 const adminPassword = 'luxaris2024';
 
@@ -193,7 +194,7 @@ export default function Admin() {
                         <div>
                             <h2 className="text-2xl font-bold text-slate-900 mb-6">Gestion des Mannequins IA</h2>
                             <div className="bg-white rounded-lg shadow p-6">
-                                <p className="text-slate-600">Section de gestion des mannequins IA en développement...</p>
+                                <APIGoogle />
                             </div>
                         </div>
                     )}
