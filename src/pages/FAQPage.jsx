@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import SearchFAQ from "../components/faq/SearchFAQ";
+import SearchFAQ from "../components/faq/searchFaq";
 import FAQAccordion from "../components/faq/FAQAccordion";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import FAQTitle from "../components/faq/FAQTitle"
