@@ -173,7 +173,7 @@ export default function AIMannequins() {
   const handleSelect = (id) => window.location.href = `/paiement?model=${id}`;
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '40px auto', padding: '0 20px' }}>
+    <div style={{ maxWidth: '1200px', margin: '40px auto', padding: '50px 20px' }}>
       
     {/* --- LUXARIS HEADER SECTION --- */}
     <div style={{ textAlign: 'center', marginBottom: '60px' }}>
