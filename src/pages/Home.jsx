@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import Hero from "../components/home/Hero.jsx";
+import APIGoogle from "../components/AI-API/API-Google.jsx";
 
 const Mannequins = lazy(() => import("../components/home/Mannequins.jsx"));
 const Clients = lazy(() => import("../components/home/Clients.jsx"));
