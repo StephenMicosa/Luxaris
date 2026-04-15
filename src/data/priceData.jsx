@@ -35,7 +35,7 @@ export const realMannequinsData = [
         badge: { text: "Option rapide", color: "rose" },
         dotColor: "rose-600",
         details: [{ text: "Casting sous 48h" }],
-        prices: [{ amount: "+150 €", color: "rose-600", size: "xl" }]
+        prices: [{ amount: "+150 €", color: "[#4A001A]", size: "xl" }]
     },
     {
         id: 5,
@@ -78,7 +78,7 @@ export const aiMannequinsData = [
         badge: null,
         dotColor: "rose-600",
         details: [{ text: "1 photo retouchée" }],
-        prices: [{ amount: "75 €", color: "rose-600", size: "xl" }]
+        prices: [{ amount: "75 €", color: "[#4A001A]", size: "xl" }]
     },
     {
         id: 3,
@@ -86,7 +86,7 @@ export const aiMannequinsData = [
         badge: null,
         dotColor: "rose-700",
         details: [{ text: "5 photos supplémentaires" }],
-        prices: [{ amount: "350 €", color: "rose-700", size: "xl" }]
+        prices: [{ amount: "350 €", color: "[#4A001A]", size: "xl" }]
     },
     {
         id: 6,
@@ -94,7 +94,7 @@ export const aiMannequinsData = [
         badge: { text: "Exclusif", color: "rose" },
         dotColor: "rose-800",
         details: [{ text: "Mannequin non réutilisé" }],
-        prices: [{ amount: "+700 €", color: "rose-800", size: "xl" }]
+        prices: [{ amount: "+700 €", color: "[#4A001A]", size: "xl" }]
     },
     {
         id: 7,
@@ -102,6 +102,6 @@ export const aiMannequinsData = [
         badge: null,
         dotColor: "rose-600",
         details: [{ text: "Tenues, couleurs, angles" }],
-        prices: [{ amount: "200 – 350 €", color: "rose-600", size: "xl" }]
+        prices: [{ amount: "200 – 350 €", color: "[#4A001A]", size: "xl" }]
     }
 ];
