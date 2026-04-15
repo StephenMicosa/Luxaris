@@ -17,6 +17,7 @@ const About = lazy(() => import("./pages/About"));
 const AIMannequins = lazy(() => import("./pages/AIMannequins.jsx"));
 const Tarifs = lazy(() => import("./pages/Tarifs.jsx"));
 const Contact = lazy(() => import("./pages/Contact"));
+const PaymentCommand = lazy(() => import("./pages/PaymentCommand.jsx"));
 const ContactFooter = lazy(() => import("./pages/ContactFooter.jsx"));
 const ContactSimple = lazy(() => import("./pages/ContactSimple"));
 const FAQPage = lazy(() => import("./pages/FAQPage.jsx"));
@@ -42,6 +43,7 @@ export default function App() {
                 <Route path="/pricing" element={<Tarifs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/ai-models" element={<AIMannequins />} />
+                <Route path="/paiement" element={<PaymentCommand />} />
                 <Route path="/contact-footer" element={<ContactFooter />} />
                 <Route path="/contactez-nous" element={<ContactSimple />} />
                 <Route path="/faq" element={<FAQPage />} />

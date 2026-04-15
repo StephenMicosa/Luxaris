@@ -170,7 +170,7 @@ const MannequinCardMobile = ({ model, onSelect }) => {
 
 export default function AIMannequins() {
   const isMobile = useIsMobile();
-  const handleSelect = (id) => window.location.href = `/paiement?model=${id}`;
+  const handleSelect = (id) => window.location.href = `/paiement?model=${id}&type=AI`;
 
   return (
     <div style={{ maxWidth: '1200px', margin: '40px auto', padding: '50px 20px' }}>
