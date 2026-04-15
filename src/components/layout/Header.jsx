@@ -83,9 +83,6 @@ export default function Header() {
                             </picture>
                         </Link>
                     </div>
-
-                    {/* Right: CTA button */}
-
                 </div>
             </header>
 
