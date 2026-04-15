@@ -32,7 +32,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       <HelmetProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <div className="min-h-screen bg-transparent">
             <Header />
 
