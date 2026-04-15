@@ -85,12 +85,7 @@ export default function Header() {
                     </div>
 
                     {/* Right: CTA button */}
-                    <Link
-                        to="/contact-footer"
-                        className="rounded-lg border border-[#4A001A] bg-[#4A001A] px-5 py-2 text-xs font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-                    >
-                        Contactez-nous
-                    </Link>
+
                 </div>
             </header>
 
