@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import MannequinGrid from "./MannequinGrid";
-=======
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
->>>>>>> 3304b83 (...)
 
 const mannequinStyles = `
   @keyframes fadeInUp {
@@ -112,49 +107,13 @@ const mannequinStyles = `
       line-height: 1.6;
     }
   }
-<<<<<<< HEAD
-  
-  .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-  }
-  
-  .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
-  }
-  
-  .mannequin-card {
-    animation: slideInRight 0.6s ease-out both;
-  }
-  
-  .mannequin-card:nth-child(1) { animation-delay: 0s; }
-  .mannequin-card:nth-child(2) { animation-delay: 0.1s; }
-  .mannequin-card:nth-child(3) { animation-delay: 0.2s; }
-  .mannequin-card:nth-child(4) { animation-delay: 0.3s; }
-  .mannequin-card:nth-child(5) { animation-delay: 0.4s; }
-  .mannequin-card:nth-child(6) { animation-delay: 0.5s; }
-  .mannequin-card:nth-child(7) { animation-delay: 0.6s; }
-  .mannequin-card:nth-child(8) { animation-delay: 0.7s; }
-  .mannequin-card:nth-child(9) { animation-delay: 0.8s; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .animate-slide-in-left,
-    .animate-slide-in-right,
-    .mannequin-card {
-      animation: none !important;
-      opacity: 1 !important;
-      transform: none !important;
-    }
-  }
-=======
->>>>>>> 3304b83 (...)
 `;
 
 function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/contact" }) {
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-        reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
-      }`}
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
+        }`}
     >
       <div className="text-center lg:text-left">
         <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#4A001A] mb-3">
@@ -224,15 +183,6 @@ export default function Mannequins() {
               Deux approches pour répondre aux besoins des marques
             </h2>
 
-<<<<<<< HEAD
-          <div className="max-w-5xl mx-auto text-center text-slate-600 mb-12 space-y-2 animate-slide-in-right">
-            <p><strong>Défilé :</strong> pour les événements mode, présentations et catwalk.</p>
-            <p><strong>Publicité :</strong> pour les campagnes visuelles, contenus digitaux et e-commerce.</p>
-          </div>
-
-          <div className="flex justify-center">
-            <MannequinGrid />
-=======
             <p className="text-slate-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
               Luxaris propose des mannequins réels et des mannequins IA pour
               accompagner les marques dans leurs campagnes, leurs shootings et
@@ -255,7 +205,6 @@ export default function Mannequins() {
               reverse
               linkTo="/contact"
             />
->>>>>>> 3304b83 (...)
           </div>
         </div>
       </section>
