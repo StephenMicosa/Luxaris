@@ -1,6 +1,13 @@
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { useState } from "react";
 import { testimonials } from "../../data/testimonialsData";
 import TestimonialCard from "./TestimonialCard";
+
+const INITIAL_VISIBLE = 6;
+const VISIBLE_STEP = 3;
+
+const fallbackRotations = [-6, 4, 7, -3, -8, -4, 5, -5, 6, -2];
+const fallbackOffsets = [0, 12, -8, 10, -6, 14, -4, 8, -10, 6];
 
 const clientStyles = `
   @keyframes fadeInScale {
@@ -14,6 +21,15 @@ const clientStyles = `
     }
   }
 
+  @keyframes floatGentle {
+    0%, 100% {
+      transform: translate3d(0, var(--static-offset, 0px), 0) rotate(var(--card-rotate));
+    }
+    50% {
+      transform: translate3d(0, calc(var(--static-offset, 0px) - 10px), 0) rotate(calc(var(--card-rotate) + 0.8deg));
+    }
+  }
+
   .animate-fade-in-scale {
     animation: fadeInScale 0.6s ease-out forwards;
   }
@@ -24,14 +40,15 @@ const clientStyles = `
   }
 
   .floating-quote {
-    contain: layout paint;
     will-change: transform;
-    transform: rotate(var(--card-rotate));
+    overflow: visible;
+    animation: floatGentle var(--float-duration, 9s) ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
     transition: transform 240ms ease;
   }
 
   .floating-quote:hover {
-    transform: translate3d(0, -6px, 0) rotate(var(--card-rotate));
+    transform: translate3d(0, calc(var(--static-offset, 0px) - 6px), 0) rotate(var(--card-rotate));
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -42,17 +59,31 @@ const clientStyles = `
     }
 
     .floating-quote {
+      animation: none;
       transition: none;
+      transform: translate3d(0, var(--static-offset, 0px), 0) rotate(var(--card-rotate));
     }
 
     .floating-quote:hover {
-      transform: rotate(var(--card-rotate));
+      transform: translate3d(0, var(--static-offset, 0px), 0) rotate(var(--card-rotate));
     }
   }
 `;
 
 export default function Clients() {
   const scrollRef = useScrollAnimation();
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
+
+  const visibleTestimonials = testimonials.slice(0, visibleCount);
+  const canShowMore = visibleCount < testimonials.length;
+
+  const handleShowMore = () => {
+    setVisibleCount((current) => Math.min(current + VISIBLE_STEP, testimonials.length));
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(INITIAL_VISIBLE);
+  };
 
   return (
     <>
@@ -77,36 +108,51 @@ export default function Clients() {
             </p>
           </div>
 
-          <div className="hidden md:block relative h-176 rounded-[2.5rem] border border-white/70 bg-white/40 p-6 shadow-[0_20px_55px_rgba(74,0,26,0.08)]">
-            <div className="absolute inset-6 rounded-4xl border border-white/70 border-dashed bg-white/20" aria-hidden="true" />
-            {testimonials.map((item, index) => (
-              <div
-                key={item.name}
-                className="floating-quote absolute"
-                style={{
-                  top: item.top,
-                  left: item.left,
-                  width: item.width,
-                  animationDelay: item.floatDelay,
-                  zIndex: index % 2 === 0 ? 2 : 1,
-                  ["--card-rotate"]: `${item.rotate}deg`,
-                }}
-              >
-                <TestimonialCard item={item} />
-              </div>
-            ))}
-          </div>
+          <div className="relative rounded-[2.5rem] border border-white/70 bg-white/40 p-5 md:p-6 shadow-[0_20px_55px_rgba(74,0,26,0.08)]">
+            <div className="absolute inset-6 rounded-[2rem] border border-white/70 border-dashed bg-white/20" aria-hidden="true" />
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
+              {visibleTestimonials.map((item, index) => {
+                const rotate = item.rotate ?? fallbackRotations[index % fallbackRotations.length];
+                const offset = fallbackOffsets[index % fallbackOffsets.length];
 
-          <div className="md:hidden flex flex-col gap-4">
-            {testimonials.map((item) => (
-              <TestimonialCard key={item.name} item={item} />
-            ))}
+                return (
+                  <div
+                    key={item.name}
+                    className="floating-quote mx-auto w-full max-w-[19rem]"
+                    style={{
+                      ["--card-rotate"]: `${rotate}deg`,
+                      ["--float-delay"]: item.floatDelay ?? `${(index % 6) * 0.22}s`,
+                      ["--float-duration"]: `${8.5 + (index % 3) * 1.1}s`,
+                      ["--static-offset"]: `${offset}px`,
+                    }}
+                  >
+                    <TestimonialCard item={item} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           <div className="flex justify-center">
-            <button className="rounded-full border border-rose-900/10 bg-white/80 px-6 py-3 text-sm font-semibold text-rose-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-white">
-              Voir plus de retours
-            </button>
+            {canShowMore ? (
+              <button
+                type="button"
+                onClick={handleShowMore}
+                className="rounded-full border border-rose-900/10 bg-white/85 px-6 py-3 text-sm font-semibold text-rose-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                Voir plus de retours
+              </button>
+            ) : (
+              testimonials.length > INITIAL_VISIBLE && (
+                <button
+                  type="button"
+                  onClick={handleShowLess}
+                  className="rounded-full border border-rose-900/10 bg-white/70 px-6 py-3 text-sm font-semibold text-rose-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  Voir moins
+                </button>
+              )
+            )}
           </div>
         </div>
       </section>

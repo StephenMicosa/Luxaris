@@ -49,7 +49,6 @@ export default function Home() {
             {showBelowFold && (
                 <Suspense fallback={<div className="min-h-60" aria-hidden="true" />}>
                     <Mannequins />
-                    <Clients />
                 </Suspense>
             )}
         </>
