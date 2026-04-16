@@ -82,7 +82,7 @@ export const aiMannequinsData = [
     },
     {
         id: 3,
-        name: "Pack 5 photos",
+        name: "Pack 5 photos supplémentaire",
         badge: null,
         dotColor: "rose-700",
         details: [{ text: "5 photos supplémentaires" }],
@@ -95,13 +95,5 @@ export const aiMannequinsData = [
         dotColor: "rose-800",
         details: [{ text: "Mannequin non réutilisé" }],
         prices: [{ amount: "+700 €", color: "[#4A001A]", size: "xl" }]
-    },
-    {
-        id: 7,
-        name: "Déclinaisons",
-        badge: null,
-        dotColor: "rose-600",
-        details: [{ text: "Tenues, couleurs, angles" }],
-        prices: [{ amount: "200 – 350 €", color: "[#4A001A]", size: "xl" }]
     }
 ];

@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// IMPORT DE TES DONNÉES (Vérifie bien le chemin)
+import { aiMannequinsData, realMannequinsData } from '../../data/priceData.jsx';
 
-/**
- * Payment and Contact Form Component
- * Handles user identification and secure payment method selection.
- */
-export default function PaymentForm({ onSubmit }) {
-  // Payment method state ('card' or 'paypal')
+export default function PaymentForm({ 
+  onSubmit, modelType, 
+  selectedBase, setSelectedBase, 
+  selectedOptions, setSelectedOptions 
+}) {
   const [paymentMethod, setPaymentMethod] = useState('card');
 
-  // Shared input styling
+  // Déterminer quelles données utiliser (IA ou Réel)
+  const dataList = modelType === 'AI' ? aiMannequinsData : realMannequinsData;
+  const baseService = dataList[0]; // Le 1er élément est le pack de base
+  const addons = dataList.slice(1); // Le reste, ce sont les suppléments
+
+  // Sélectionner le pack de base par défaut au chargement
+  useEffect(() => {
+    if (!selectedBase) setSelectedBase(baseService);
+  }, [baseService, selectedBase, setSelectedBase]);
+
+  // Gérer les cases à cocher multiples
+  const toggleOption = (option) => {
+    if (selectedOptions.find(opt => opt.id === option.id)) {
+      setSelectedOptions(selectedOptions.filter(opt => opt.id !== option.id));
+    } else {
+      setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
   const inputStyle = {
     padding: '16px', 
     borderRadius: '8px', 
@@ -34,7 +53,7 @@ export default function PaymentForm({ onSubmit }) {
       padding: '40px', borderRadius: '24px', border: '1px solid #eaeaea' 
     }}>
       
-      {/* --- SECTION 1: CONTACT INFO --- */}
+      {/* 1. INFORMATIONS */}
       <h3 style={{ marginTop: 0, marginBottom: '25px', fontSize: '1.3rem', fontWeight: '600', color: '#333' }}>
         1. Vos informations
       </h3>
@@ -60,18 +79,60 @@ export default function PaymentForm({ onSubmit }) {
         </div>
       </div>
 
-      {/* Separator */}
       <div style={{ height: '1px', backgroundColor: '#eee', marginBottom: '30px' }}></div>
 
-      {/* --- SECTION 2: PAYMENT METHOD --- */}
+      {/* 2. PRESTATION (La fameuse cascade) */}
       <h3 style={{ marginBottom: '25px', fontSize: '1.3rem', fontWeight: '600', color: '#333' }}>
-        2. Paiement
+        2. Votre Prestation
       </h3>
       
-      {/* Method Selector */}
-      <div style={{ display: 'flex', gap: '15px', marginBottom: '30px' }}>
+      <div style={{ marginBottom: '30px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
         
-        {/* Credit Card Button */}
+        {/* Le forfait de base */}
+        <div style={{ padding: '15px', border: '1px solid #4a0b19', borderRadius: '8px', backgroundColor: '#fff5f7', display: 'flex', justifyContent: 'space-between' }}>
+          <div>
+            <strong>{baseService.name}</strong>
+            <div style={{ fontSize: '0.8rem', color: '#666' }}>{baseService.details[0].text}</div>
+          </div>
+          <strong style={{ color: '#4a0b19' }}>{baseService.prices[0].amount}</strong>
+        </div>
+
+        <p style={{ margin: '10px 0 5px', fontSize: '0.9rem', fontWeight: 'bold' }}>Options supplémentaires :</p>
+        
+        {/* Les cases à cocher pour les suppléments */}
+        {addons.map(addon => {
+          const isChecked = selectedOptions.some(opt => opt.id === addon.id);
+          return (
+            <label key={addon.id} style={{ 
+              display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 15px', 
+              border: isChecked ? '1px solid #4a0b19' : '1px solid #eaeaea', 
+              borderRadius: '8px', cursor: 'pointer', backgroundColor: '#fff',
+              transition: 'all 0.2s'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <input 
+                  type="checkbox" 
+                  checked={isChecked} 
+                  onChange={() => toggleOption(addon)}
+                  style={{ accentColor: '#4a0b19', width: '18px', height: '18px' }}
+                />
+                <span style={{ fontSize: '0.95rem' }}>{addon.name}</span>
+              </div>
+              <span style={{ fontSize: '0.9rem', color: '#666' }}>{addon.prices[0].amount}</span>
+            </label>
+          );
+        })}
+      </div>
+
+      <div style={{ height: '1px', backgroundColor: '#eee', marginBottom: '30px' }}></div>
+
+      {/* 3. PAIEMENT */}
+      <h3 style={{ marginBottom: '25px', fontSize: '1.3rem', fontWeight: '600', color: '#333' }}>
+        3. Paiement
+      </h3>
+      
+      <div style={{ display: 'flex', gap: '15px', marginBottom: '30px' }}>
+        {/* Bouton Carte (Avec TES URLs exactes) */}
         <button 
           onClick={() => setPaymentMethod('card')}
           style={{ 
@@ -81,13 +142,12 @@ export default function PaymentForm({ onSubmit }) {
             transition: 'all 0.2s', boxShadow: paymentMethod === 'card' ? '0 4px 12px rgba(74, 11, 25, 0.08)' : 'none'
           }}
         >
-          {/* Direct stable URLs for logos */}
           <img src="https://www.prestasoo.com/images/logo-cb.jpg" alt="CB" style={{ height: '18px' }} />
           <img src="https://campusbee.ug/wp-content/uploads/2017/08/visa-logo.png" alt="Visa" style={{ height: '12px' }} />
           <img src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo-2016-2020.png" alt="Mastercard" style={{ height: '20px' }} />
         </button>
 
-        {/* PayPal Button */}
+        {/* Bouton PayPal (Avec TON URL exacte) */}
         <button 
           onClick={() => setPaymentMethod('paypal')}
           style={{ 
@@ -101,7 +161,6 @@ export default function PaymentForm({ onSubmit }) {
         </button>
       </div>
       
-      {/* Conditional Content */}
       {paymentMethod === 'card' ? (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
           <div>
@@ -116,38 +175,28 @@ export default function PaymentForm({ onSubmit }) {
               <span style={{ fontSize: '0.85rem' }}>MM/AA CVC</span>
             </div>
           </div>
-          
-          <button 
-            onClick={onSubmit}
-            style={{
-              width: '100%', padding: '16px', borderRadius: '50px', border: 'none',
-              backgroundColor: '#4a0b19', color: '#fff', fontSize: '1.1rem', 
-              fontWeight: '600', cursor: 'pointer', marginTop: '15px'
-            }}
-          >
-            Payer 1 Crédit
-          </button>
         </div>
       ) : (
         <div style={{ textAlign: 'center', padding: '10px 0' }}>
           <p style={{ color: '#666', marginBottom: '25px', lineHeight: '1.6' }}>
             Vous allez être redirigé vers PayPal pour confirmer votre paiement.
           </p>
-          <button 
-            onClick={onSubmit}
-            style={{
-              width: '100%', padding: '16px', borderRadius: '50px', border: 'none',
-              backgroundColor: '#ffc439', color: '#000', fontSize: '1.1rem', 
-              fontWeight: '600', cursor: 'pointer'
-            }}
-          >
-            Continuer vers PayPal
-          </button>
         </div>
       )}
 
+      <button 
+        onClick={onSubmit}
+        style={{
+          width: '100%', padding: '16px', borderRadius: '50px', border: 'none',
+          backgroundColor: '#4a0b19', color: '#fff', fontSize: '1.1rem', 
+          fontWeight: '600', cursor: 'pointer', marginTop: '15px'
+        }}
+      >
+        Valider la sélection
+      </button>
+
       <p style={{ textAlign: 'center', margin: '25px 0 0 0', fontSize: '0.8rem', color: '#aaa' }}>
-      Transaction sécurisée
+        Transaction sécurisée
       </p>
     </div>
   );
