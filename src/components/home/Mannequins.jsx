@@ -26,12 +26,13 @@ const mannequinStyles = `
     animation: fadeInUp 0.8s ease-out forwards;
   }
 
+  /* CARTE EN 9:16 */
   .flip-card {
-    perspective: 1200px;
     width: 100%;
-    max-width: 520px;
-    height: 320px;
+    max-width: 260px;
+    aspect-ratio: 9 / 16;
     margin: 0 auto;
+    perspective: 1200px;
     cursor: grab;
   }
 
@@ -44,7 +45,7 @@ const mannequinStyles = `
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: elegantFlip 9s ease-in-out infinite;
+    animation: elegantFlip 10s ease-in-out infinite;
   }
 
   .flip-card:hover .flip-card-inner {
@@ -59,15 +60,13 @@ const mannequinStyles = `
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
-  .flip-face video,
-  .flip-face img {
+  .flip-face video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
   }
 
   .flip-back {
@@ -78,34 +77,24 @@ const mannequinStyles = `
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .flip-back-content h4 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .flip-back-content p {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: rgba(255,255,255,0.9);
   }
 
   @media (max-width: 768px) {
     .flip-card {
-      max-width: 100%;
-      height: 260px;
-    }
-
-    .flip-back-content h4 {
-      font-size: 1.4rem;
-    }
-
-    .flip-back-content p {
-      font-size: 0.9rem;
-      line-height: 1.6;
+      max-width: 220px;
     }
   }
 `;
@@ -140,22 +129,19 @@ function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/c
         </div>
       </div>
 
-      <div className="flip-card select-none">
-        <div className="flip-card-inner">
-          <div className="flip-face bg-white">
-            <video
-              src={videoSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-          </div>
+      {/* CARTE CENTRÉE */}
+      <div className="flex justify-center">
+        <div className="flip-card select-none">
+          <div className="flip-card-inner">
+            <div className="flip-face">
+              <video src={videoSrc} autoPlay muted loop playsInline />
+            </div>
 
-          <div className="flip-face flip-back">
-            <div className="flip-back-content">
-              <h4>{title}</h4>
-              <p>{description}</p>
+            <div className="flip-face flip-back">
+              <div className="flip-back-content">
+                <h4>{title}</h4>
+                <p>{description}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -186,23 +172,21 @@ export default function Mannequins() {
             </h2>
 
             <p className="text-slate-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-              Luxaris propose des mannequins réels et des mannequins IA pour
-              accompagner les marques dans leurs campagnes, leurs shootings et
-              leurs productions visuelles.
+              Luxaris propose des mannequins réels et des mannequins IA pour accompagner les marques dans leurs campagnes, shootings et productions visuelles.
             </p>
           </div>
 
           <div className="space-y-24">
             <CardBlock
               title="Mannequin réel"
-              description="Des profils humains pour les shootings, campagnes, castings et contenus où l’authenticité, la présence réelle et l’expression naturelle sont essentielles."
+              description="Des profils humains pour les shootings, campagnes, castings et contenus où l’authenticité et l’expression naturelle sont essentielles."
               videoSrc={mannequinIAVideo}
               linkTo="/contact"
             />
 
             <CardBlock
               title="Mannequin IA"
-              description="Des mannequins générés avec l’intelligence artificielle pour produire rapidement des visuels premium, cohérents, innovants et adaptables aux besoins créatifs."
+              description="Des mannequins générés avec l’IA pour produire rapidement des visuels premium, cohérents et innovants."
               videoSrc={mannequinIAVideo}
               reverse
               linkTo="/ai-models"
