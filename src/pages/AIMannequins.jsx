@@ -172,6 +172,11 @@ export default function AIMannequins() {
   const isMobile = useIsMobile();
   const handleSelect = (id) => window.location.href = `/paiement?model=${id}&type=AI`;
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div style={{ maxWidth: '1200px', margin: '40px auto', padding: '50px 20px' }}>
       

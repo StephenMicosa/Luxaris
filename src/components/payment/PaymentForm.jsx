@@ -82,9 +82,9 @@ export default function PaymentForm({ onSubmit }) {
           }}
         >
           {/* Direct stable URLs for logos */}
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Logo_CB.png" alt="CB" style={{ height: '18px' }} />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" style={{ height: '12px' }} />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" style={{ height: '20px' }} />
+          <img src="https://www.prestasoo.com/images/logo-cb.jpg" alt="CB" style={{ height: '18px' }} />
+          <img src="https://campusbee.ug/wp-content/uploads/2017/08/visa-logo.png" alt="Visa" style={{ height: '12px' }} />
+          <img src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo-2016-2020.png" alt="Mastercard" style={{ height: '20px' }} />
         </button>
 
         {/* PayPal Button */}
@@ -97,7 +97,7 @@ export default function PaymentForm({ onSubmit }) {
             transition: 'all 0.2s', boxShadow: paymentMethod === 'paypal' ? '0 4px 12px rgba(74, 11, 25, 0.08)' : 'none'
           }}
         >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/200px-PayPal.svg.png" alt="PayPal" style={{ height: '20px' }} />
+          <img src="https://www.pngall.com/wp-content/uploads/5/PayPal-Logo-PNG-Picture.png" alt="PayPal" style={{ height: '20px' }} />
         </button>
       </div>
       

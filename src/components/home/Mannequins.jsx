@@ -203,7 +203,7 @@ export default function Mannequins() {
               description="Des mannequins générés avec l’intelligence artificielle pour produire rapidement des visuels premium, cohérents, innovants et adaptables aux besoins créatifs."
               videoSrc="/videos/mannequin-ia.mp4"
               reverse
-              linkTo="/contact"
+              linkTo="/ai-models"
             />
           </div>
         </div>
