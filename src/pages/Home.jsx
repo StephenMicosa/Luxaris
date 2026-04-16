@@ -45,7 +45,6 @@ export default function Home() {
 
             <Hero />
             <div ref={triggerRef} aria-hidden="true" className="h-px w-full" />
-            <div className="flex justify-center"><strong>Rajouter explication</strong></div>
             {showBelowFold && (
                 <Suspense fallback={<div className="min-h-60" aria-hidden="true" />}>
                     <Mannequins />

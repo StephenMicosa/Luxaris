@@ -194,14 +194,14 @@ export default function Mannequins() {
             <CardBlock
               title="Mannequin réel"
               description="Des profils humains pour les shootings, campagnes, castings et contenus où l’authenticité, la présence réelle et l’expression naturelle sont essentielles."
-              videoSrc="/videos/mannequin-reel.mp4"
+              videoSrc="../assets/video/mannequin-reel.mp4"
               linkTo="/contact"
             />
 
             <CardBlock
               title="Mannequin IA"
               description="Des mannequins générés avec l’intelligence artificielle pour produire rapidement des visuels premium, cohérents, innovants et adaptables aux besoins créatifs."
-              videoSrc="/videos/mannequin-ia.mp4"
+              videoSrc="../assets/video/mannequin-ia.mp4"
               reverse
               linkTo="/ai-models"
             />
