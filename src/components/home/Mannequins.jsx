@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import mannequinIAVideo from "../../assets/video/mannequin-ia.mp4";
 
 const mannequinStyles = `
   @keyframes fadeInUp {
@@ -112,8 +113,9 @@ const mannequinStyles = `
 function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/contact" }) {
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
-        }`}
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+        reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
+      }`}
     >
       <div className="text-center lg:text-left">
         <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#4A001A] mb-3">
@@ -194,14 +196,14 @@ export default function Mannequins() {
             <CardBlock
               title="Mannequin réel"
               description="Des profils humains pour les shootings, campagnes, castings et contenus où l’authenticité, la présence réelle et l’expression naturelle sont essentielles."
-              videoSrc="../assets/video/mannequin-reel.mp4"
+              videoSrc={mannequinIAVideo}
               linkTo="/contact"
             />
 
             <CardBlock
               title="Mannequin IA"
               description="Des mannequins générés avec l’intelligence artificielle pour produire rapidement des visuels premium, cohérents, innovants et adaptables aux besoins créatifs."
-              videoSrc="../assets/video/mannequin-ia.mp4"
+              videoSrc={mannequinIAVideo}
               reverse
               linkTo="/ai-models"
             />
