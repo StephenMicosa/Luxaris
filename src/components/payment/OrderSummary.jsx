@@ -44,7 +44,7 @@ export default function OrderSummary({ modelId, modelType, imageSrc }) {
             color: isAI ? '#2d6a4f' : '#b25e0a',
             fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '10px'
           }}>
-            {isAI ? 'Égérie IA' : 'Modèle Photo'}
+            {isAI ? 'Modèle IA' : 'Modèle Humain'}
           </div>
           <p style={{ margin: '0 0 5px 0', fontSize: '0.9rem', color: '#777' }}>Référence :</p>
           <p style={{ margin: '0', fontSize: '1.2rem', color: '#111', fontWeight: '600' }}>
