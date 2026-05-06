@@ -3,39 +3,31 @@ export const realMannequinsData = [
         id: 1,
         name: "Cachet mannequin (indicatif)",
         badge: null,
-        dotColor: "rose-600",
+        dotColor: "slate-900",
         details: [
             { icon: "clock", text: "Demi-journée" },
-            { icon: "clock", text: "Journée complète" }
+            { icon: "clock", text: "Journée complète" },
         ],
         prices: [
-            { amount: "80 – 120 €", color: "[#4A001A]" },
-            { amount: "150 – 250 €", color: "[#4A001A]" }
-        ]
+            { amount: "80 - 120 €", color: "[#4A001A]" },
+            { amount: "150 - 250 €", color: "[#4A001A]" },
+        ],
     },
     {
         id: 2,
         name: "Commission Luxaris",
-        badge: { text: "Option 1", color: "rose" },
-        dotColor: "rose-600",
+        badge: null,
+        dotColor: "slate-900",
         details: [{ text: "25 % du cachet mannequin" }],
-        prices: [{ amount: "Variable", color: "slate-900", isVariable: true }]
+        prices: [{ amount: "Variable", color: "[#4A001A]", isVariable: true }],
     },
     {
         id: 3,
         name: "Frais agence",
-        badge: { text: "Option 2 – Premium", color: "slate" },
-        dotColor: "rose-700",
+        badge: null,
+        dotColor: "slate-900",
         details: [{ text: "Par mannequin / par shooting" }],
-        prices: [{ amount: "300 €", color: "[#4A001A]", size: "2xl" }]
-    },
-    {
-        id: 4,
-        name: "Sélection express",
-        badge: { text: "Option rapide", color: "rose" },
-        dotColor: "rose-600",
-        details: [{ text: "Casting sous 48h" }],
-        prices: [{ amount: "+150 €", color: "[#4A001A]", size: "xl" }]
+        prices: [{ amount: "300 €", color: "[#4A001A]", size: "2xl" }],
     },
     {
         id: 5,
@@ -43,57 +35,57 @@ export const realMannequinsData = [
         badge: null,
         dotColor: "slate-900",
         details: [{ text: "Mannequin remplacé si désistement" }],
-        prices: [{ amount: "+100 €", color: "slate-900", size: "xl" }]
+        prices: [{ amount: "+100 €", color: "[#4A001A]", size: "xl" }],
     },
     {
         id: 6,
         name: "Exclusivité mannequin",
-        badge: { text: "Premium", color: "rose" },
-        dotColor: "rose-800",
+        badge: null,
+        dotColor: "slate-900",
         details: [{ text: "Non-utilisation pour concurrents (temps limité)" }],
-        prices: [{ amount: "+300 à 600 €", color: "rose-800", size: "xl" }]
+        prices: [{ amount: "+300 à 600 €", color: "[#4A001A]", size: "xl" }],
     },
     {
         id: 7,
         name: "Gestion casting complet",
         badge: null,
-        dotColor: "rose-600",
+        dotColor: "slate-900",
         details: [{ text: "Plusieurs mannequins" }],
-        prices: [{ amount: "+500 €", color: "[#4A001A]", size: "xl" }]
-    }
+        prices: [{ amount: "+500 €", color: "[#4A001A]", size: "xl" }],
+    },
 ];
 
 export const aiMannequinsData = [
     {
         id: 1,
-        name: "Pack IA – Signature",
-        badge: { text: "Populaire", color: "rose" },
-        dotColor: "rose-600",
-        details: [{ text: "1 mannequin irréel + 10 photos studio" }],
-        prices: [{ amount: "1 700 €", color: "[#4A001A]", size: "2xl" }]
+        name: "Pack IA - Signature",
+        badge: null,
+        dotColor: "slate-900",
+        details: [{ text: "1 mannequin virtuel + 10 photos studio" }],
+        prices: [{ amount: "1 700 €", color: "[#4A001A]", size: "2xl" }],
     },
     {
         id: 2,
         name: "Photo supplémentaire",
         badge: null,
-        dotColor: "rose-600",
+        dotColor: "slate-900",
         details: [{ text: "1 photo retouchée" }],
-        prices: [{ amount: "75 €", color: "[#4A001A]", size: "xl" }]
+        prices: [{ amount: "75 €", color: "[#4A001A]", size: "xl" }],
     },
     {
         id: 3,
-        name: "Pack 5 photos supplémentaire",
+        name: "Pack 5 photos supplémentaires",
         badge: null,
-        dotColor: "rose-700",
+        dotColor: "slate-900",
         details: [{ text: "5 photos supplémentaires" }],
-        prices: [{ amount: "350 €", color: "[#4A001A]", size: "xl" }]
+        prices: [{ amount: "350 €", color: "[#4A001A]", size: "xl" }],
     },
     {
         id: 6,
-        name: "Exclusivité mannequin IA",
-        badge: { text: "Exclusif", color: "rose" },
-        dotColor: "rose-800",
+        name: "Exclusivité mannequin virtuel",
+        badge: null,
+        dotColor: "slate-900",
         details: [{ text: "Mannequin non réutilisé" }],
-        prices: [{ amount: "+700 €", color: "[#4A001A]", size: "xl" }]
-    }
+        prices: [{ amount: "+700 €", color: "[#4A001A]", size: "xl" }],
+    },
 ];

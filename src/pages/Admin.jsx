@@ -213,7 +213,7 @@ export default function Admin() {
                             <h2 className="text-2xl font-bold text-slate-900 mb-6">Gestion du Contenu</h2>
                             <div className="bg-white rounded-lg shadow p-6">
                                 <p className="text-slate-600"> micro exemple de comment appeler une page web dans son </p>
-                                <iframe src="https://yisol-idm-vton.hf.space" class="w-full h-[1000px]" frameborder="0"></iframe>
+                                <iframe src="https://yisol-idm-vton.hf.space" class="w-full h-250" frameborder="0"></iframe>
                             </div>
                         </div>
                     )}

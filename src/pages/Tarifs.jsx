@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import TarifsHeader from "../components/pricing/TarifsHeader";
 import Functionalities from "../components/pricing/Functionalities";
-import FAQ from "../components/faq/FAQ";
 import PricingTable from "../components/pricing/PricingTable";
 import { realMannequinsData, aiMannequinsData } from "../data/priceData";
 
@@ -44,7 +43,6 @@ export default function Tarifs() {
                 </div>
 
                 <Functionalities />
-                <FAQ />
             </main>
         </>
     );

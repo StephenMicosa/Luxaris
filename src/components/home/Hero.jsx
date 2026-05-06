@@ -99,7 +99,7 @@ export default function Hero() {
                 to="/contact"
                 className="w-full sm:w-auto px-8 py-3 bg-white border border-slate-300 rounded-xl font-semibold text-[#4A001A] text-base shadow-sm hover:shadow-md hover:-translate-y-0.5 transition inline-block text-center cursor-pointer"
               >
-                Choisir un mannequin
+                Contactez-nous
               </Link>
             </div>
           </div>
