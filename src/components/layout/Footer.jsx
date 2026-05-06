@@ -44,7 +44,7 @@ export default function Footer() {
                         Rejoignez nos partenaires et clients qui connaissent déjà la croissance avec Luxaris
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                    <Link to="/contact-footer" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-rose-950 transition">
+                    <Link to="/contact" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-rose-950 transition">
                         Contactez nous
                     </Link>
                     </div>
@@ -77,6 +77,9 @@ export default function Footer() {
                             </Link>
                             <Link to="/about" className="text-sm text-slate-600 hover:text-slate-900 transition">
                                 À propos
+                            </Link>
+                            <Link to="/terms" className="text-sm text-slate-600 hover:text-slate-900 transition">
+                                Conditions d’utilisation
                             </Link>
                         </div>
 

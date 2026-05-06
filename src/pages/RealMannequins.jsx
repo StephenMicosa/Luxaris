@@ -2,41 +2,48 @@ import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 
+const photoModules = import.meta.glob("../assets/Photos/*.{jpg,jpeg,png}", {
+  eager: true,
+  import: "default",
+});
+
+const realPhotos = Object.values(photoModules);
+
 const REAL_MODELS = [
   {
     id: "real-01",
-    name: "PROFILE 01",
+    name: "TALENT 01",
     poses: {
-      portrait: null,
-      full: null,
-      detail: null,
+      portrait: realPhotos[0],
+      full: realPhotos[1],
+      detail: realPhotos[2],
     },
   },
   {
     id: "real-02",
-    name: "PROFILE 02",
+    name: "TALENT 02",
     poses: {
-      portrait: null,
-      full: null,
-      detail: null,
+      portrait: realPhotos[3],
+      full: realPhotos[4],
+      detail: realPhotos[5],
     },
   },
   {
     id: "real-03",
-    name: "PROFILE 03",
+    name: "TALENT 03",
     poses: {
-      portrait: null,
-      full: null,
-      detail: null,
+      portrait: realPhotos[6],
+      full: realPhotos[7],
+      detail: realPhotos[8],
     },
   },
   {
     id: "real-04",
-    name: "PROFILE 04",
+    name: "TALENT 04",
     poses: {
-      portrait: null,
-      full: null,
-      detail: null,
+      portrait: realPhotos[9],
+      full: realPhotos[10],
+      detail: realPhotos[11],
     },
   },
 ];
@@ -268,10 +275,10 @@ export default function RealMannequins() {
   return (
     <>
       <Helmet>
-        <title>Mannequins reels | Luxaris</title>
+        <title>Mannequins réels | Luxaris</title>
         <meta
           name="description"
-          content="Selectionnez un mannequin reel pour votre prochaine campagne Luxaris."
+          content="Sélectionnez un mannequin réel pour votre prochaine campagne Luxaris."
         />
       </Helmet>
 
@@ -310,7 +317,7 @@ export default function RealMannequins() {
               letterSpacing: "0.5px",
             }}
           >
-            Ajoutez ici vos profils reels, leurs photos et leurs informations de casting.
+            Sélectionnez le profil réel adapté à votre prochaine campagne.
           </p>
         </div>
 

@@ -41,7 +41,7 @@ export default function PricingTable({
                         </thead>
                         <tbody className="divide-y divide-slate-100">
                             {data.map((item, index) => (
-                                <PriceTableRow key={item.id} item={item} index={index} hoverColor="rose-50" />
+                                <PriceTableRow key={item.id} item={item} index={index} />
                             ))}
                         </tbody>
                     </table>

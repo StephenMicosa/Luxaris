@@ -22,6 +22,7 @@ const ContactFooter = lazy(() => import("./pages/ContactFooter.jsx"));
 const ContactSimple = lazy(() => import("./pages/ContactSimple"));
 const FAQPage = lazy(() => import("./pages/FAQPage.jsx"));
 const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms.jsx"));
 const Admin = lazy(() => import("./pages/Admin.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
@@ -60,6 +61,7 @@ export default function App() {
                 <Route path="/contactez-nous" element={<ContactSimple />} />
                 <Route path="/faq" element={<FAQPage />} />
                 <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

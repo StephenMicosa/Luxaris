@@ -1,240 +1,125 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
+
+const privacySections = [
+  {
+    title: "1. Introduction",
+    body: [
+      "La présente politique de confidentialité a pour objectif d’informer les utilisateurs du site Luxaris sur la manière dont leurs données personnelles sont collectées, utilisées et protégées.",
+    ],
+  },
+  {
+    title: "2. Responsable du traitement",
+    body: [
+      "Le responsable du traitement des données est : Luxaris – Agence de mannequins réels et virtuels.",
+      "Localisation : Aix-en-Provence, France",
+      "Email : luxaris.agency@gmail.com",
+    ],
+  },
+  {
+    title: "3. Données collectées",
+    list: [
+      "Nom et prénom",
+      "Adresse email",
+      "Numéro de téléphone (le cas échéant)",
+      "Informations liées à votre demande (brief, projet, collaboration…)",
+      "Données de navigation (adresse IP, cookies, type de navigateur…)",
+    ],
+  },
+  {
+    title: "4. Finalité de la collecte",
+    list: [
+      "Répondre à vos demandes et prises de contact",
+      "Gérer les projets et collaborations",
+      "Améliorer l’expérience utilisateur",
+      "Assurer la sécurité du site",
+    ],
+  },
+  {
+    title: "5. Base légale",
+    list: [
+      "Votre consentement",
+      "L’exécution de mesures précontractuelles ou contractuelles",
+      "L’intérêt légitime de Luxaris",
+    ],
+  },
+  {
+    title: "6. Durée de conservation",
+    list: [
+      "Pendant la durée nécessaire au traitement de votre demande",
+      "Jusqu’à 3 ans après le dernier contact à des fins commerciales",
+    ],
+  },
+  {
+    title: "7. Partage des données",
+    body: ["Les données personnelles ne sont jamais vendues. Elles peuvent être partagées uniquement avec :"],
+    list: [
+      "Des prestataires techniques (hébergement, outils digitaux…)",
+      "Les autorités compétentes en cas d’obligation légale",
+    ],
+  },
+  {
+    title: "8. Sécurité",
+    body: [
+      "Luxaris met en œuvre des mesures techniques et organisationnelles adaptées afin de garantir la sécurité et la confidentialité de vos données.",
+    ],
+  },
+  {
+    title: "9. Vos droits",
+    body: ["Conformément au RGPD, vous disposez des droits suivants :"],
+    list: [
+      "Droit d’accès",
+      "Droit de rectification",
+      "Droit de suppression",
+      "Droit d’opposition",
+      "Droit à la portabilité",
+    ],
+    footer: "Vous pouvez exercer vos droits à tout moment en contactant : luxaris.agency@gmail.com",
+  },
+  {
+    title: "10. Cookies",
+    body: ["Le site Luxaris utilise des cookies afin de :"],
+    list: ["Améliorer votre navigation", "Mesurer l’audience"],
+    footer: "Vous pouvez modifier vos préférences via les paramètres de votre navigateur.",
+  },
+];
 
 export default function Privacy() {
   return (
     <>
       <Helmet>
-        <title>Politique de Confidentialité Luxaris | Protection de Vos Données</title>
-        <meta name="description" content="Politique de confidentialité complète de Luxaris. Découvrez comment nous protégeons, collectons et traitons vos données personnelles sur notre plateforme de mannequinat." />
-        <meta name="keywords" content="politique confidentialité, Luxaris, protection données, mannequinat, RGPD, plateforme mannequins" />
-        <meta name="author" content="Luxaris" />
-        <meta property="og:title" content="Politique de Confidentialité Luxaris" />
-        <meta property="og:description" content="Politique de confidentialité de Luxaris - Plateforme de mannequinat. Protection complète de vos données personnelles." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://luxaris.com/privacy" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Politique de Confidentialité Luxaris" />
-        <meta name="twitter:description" content="Découvrez comment Luxaris protège vos données personnelles." />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="French" />
-        <link rel="canonical" href="https://luxaris.com/privacy" />
+        <title>Politique de Confidentialité Luxaris</title>
+        <meta
+          name="description"
+          content="Politique de confidentialité de Luxaris, agence de mannequins réels et virtuels."
+        />
       </Helmet>
 
-      <main className="max-w-4xl mx-auto px-5 pt-28 pb-16 text-slate-700 leading-relaxed sm:px-6 md:pt-36">
-
-        <h1 className="text-3xl font-bold text-[#5a0f23] mb-2 sm:text-4xl">
-          Politique de Confidentialité Luxaris
+      <main className="mx-auto max-w-4xl px-5 pt-28 pb-16 text-slate-700 sm:px-6 md:pt-36">
+        <h1 className="mb-3 text-3xl font-bold text-[#4A001A] sm:text-4xl">
+          Politique de Confidentialité de Luxaris
         </h1>
-
-        <p className="text-lg text-slate-600 mb-2 font-semibold">
-          Protection Complète de Vos Données Personnelles
+        <p className="mb-10 text-sm font-semibold text-slate-500">
+          Dernière mise à jour : 6 mai 2026
         </p>
 
-        <p className="text-sm text-slate-500 mb-8">
-          Dernière mise à jour : 5 mars 2026
-        </p>
-
-        <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8 rounded">
-          <p className="text-sm text-amber-800">
-            <strong>⚠️ Contenu temporaire :</strong> Cette page contient un contenu temporaire en attente de validation par nos équipes de direction et de conception. Le contenu définitif sera publié prochainement.
-          </p>
-          <p className="mb-6">
-            <strong>Luxaris</strong> est une plateforme innovante dédiée au secteur du mannequinat et de la modélisation.
-            Cette politique de confidentialité (« Luxaris », « Société », « nous », « notre » ou « nos »)
-            décrit comment et pourquoi nous pouvons collecter, stocker, utiliser et/ou
-            partager (« traiter ») vos informations lorsque vous utilisez nos services (« Services ») et notre plateforme de mannequinat.
-          </p>
-
-          <ul className="list-disc pl-6 mb-6">
-            <li>
-              Visitez notre site web à l’adresse{" "}
-              <a
-                href="https://luxaris.com"
-                className="text-[#5a0f23] underline"
-                target="_blank"
-                rel="noreferrer"
-              >
-                https://luxaris.com
-              </a>
-            </li>
-            <li>
-              Créez et gérez un profil de mannequin ou d'agence
-            </li>
-            <li>
-              Consultez nos portfolios et galeries de modèles
-            </li>
-            <li>
-              Interagissez avec nous par email, formulaire de contact ou lors d'événements
-            </li>
-          </ul>
-
-          <p className="mb-10">
-            Cette politique vous aide à comprendre vos droits et vos choix en matière de vie privée.
-            Si vous n'êtes pas d'accord avec nos politiques et pratiques, veuillez ne pas
-            utiliser nos Services.
-            <br />
-            <br />
-            Pour toute question :{" "}
-            <a
-              href="mailto:support@luxaris.com"
-              className="text-[#5a0f23] underline"
-            >
-              support@luxaris.com
-            </a>
-          </p>
-
-          <h2 className="text-xl font-semibold text-[#5a0f23] mb-4">
-            RÉSUMÉ DES POINTS CLÉS
-          </h2>
-
-          <ul className="list-disc pl-6 mb-10 space-y-2">
-            <li>
-              <strong>Informations collectées :</strong> Données personnelles, données de profil,
-              contenus médias (photos, vidéos), informations de contact et d'authentification.
-            </li>
-            <li>
-              <strong>Finalité du traitement :</strong> Gérer votre profil, faciliter les connexions
-              professionnelles, améliorer notre plateforme, assurer la sécurité.
-            </li>
-            <li>
-              <strong>Partage des données :</strong> Uniquement avec votre consentement ou selon les
-              dispositions légales.
-            </li>
-            <li>
-              <strong>Vos droits :</strong> Accès, rectification, suppression de vos données
-              (selon votre juridiction).
-            </li>
-            <li>
-              <strong>Sécurité :</strong> Nous mettons en œuvre des mesures pour protéger vos données.
-            </li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold text-[#5a0f23] mb-6 mt-8">
-            Quelles Informations Collectons-nous sur Notre Plateforme ?
-          </h2>
-
-          <p className="mb-4 font-semibold text-base">
-            En bref : Nous collectons les informations que vous nous fournissez et certaines données automatiquement lors de l'utilisation de Luxaris.
-          </p>
-
-          <h3 className="text-xl font-semibold text-[#5a0f23] mb-4 mt-6">Informations que vous nous fournissez :</h3>
-
-          <ul className="list-disc pl-6 mb-8 space-y-1">
-            <li>Nom complet et prénom</li>
-            <li>Adresse email</li>
-            <li>Numéro de téléphone</li>
-            <li>Adresse physique et information de localisation</li>
-            <li>Photographies et vidéos de portfolio</li>
-            <li>Mesures et caractéristiques physiques (pour les mannequins)</li>
-            <li>Expérience professionnelle et références</li>
-            <li>Informations de paiement et données bancaires</li>
-            <li>Identifiant de compte et mots de passe</li>
-            <li>Préférences de communication et domaines d'intérêt</li>
-          </ul>
-
-          <h2 className="text-xl font-semibold text-[#5a0f23] mb-4">
-            Informations collectées automatiquement
-          </h2>
-
-          <p className="mb-6">
-            Lors de votre utilisation de la plateforme, nous collectons automatiquement :
-          </p>
-
-          <ul className="list-disc pl-6 mb-8 space-y-1">
-            <li>Adresse IP et données de géolocalisation</li>
-            <li>Type de navigateur et système d'exploitation</li>
-            <li>Pages visitées et durée des sessions</li>
-            <li>Interactions avec le contenu</li>
-            <li>Cookies et technologies de suivi similaires</li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold text-[#5a0f23] mb-6 mt-8">
-            Comment Utilisons-nous Vos Données Personnelles ?
-          </h2>
-
-          <p className="mb-6">
-            Luxaris utilise vos données personnelles pour les finalités suivantes :
-          </p>
-
-          <ul className="list-disc pl-6 space-y-2 mb-10">
-            <li>Créer, maintenir et gérer votre compte</li>
-            <li>Faciliter les connexions entre mannequins, agences et clients</li>
-            <li>Afficher votre profil et portfolio sur la plateforme</li>
-            <li>Traiter les candidatures et opportunités de casting</li>
-            <li>Communiquer avec vous concernant votre compte et nos services</li>
-            <li>Améliorer et personnaliser votre expérience utilisateur</li>
-            <li>Assurer la sécurité et prévenir les fraudes</li>
-            <li>Respecter nos obligations légales et réglementaires</li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold text-[#5a0f23] mb-6 mt-8">
-            Combien de Temps Conservons-nous Vos Données ?
-          </h2>
-
-          <p className="mb-6">
-            Vos données sont conservées aussi longtemps que nécessaire pour fournir nos Services.
-            Vous pouvez demander la suppression de votre compte à tout moment, ce qui entraînera
-            la suppression de vos données personnelles.
-          </p>
-
-          <h2 className="text-2xl font-semibold text-[#5a0f23] mb-6 mt-8">
-            Quels Sont Vos Droits Relatifs à la Confidentialité ?
-          </h2>
-
-          <p className="mb-6">
-            Selon votre localisation, vous disposez de droits concernant vos données :
-          </p>
-
-          <ul className="list-disc pl-6 space-y-2 mb-10">
-            <li><strong>Droit d'accès :</strong> Obtenir une copie de vos données</li>
-            <li><strong>Droit de rectification :</strong> Corriger vos données inexactes</li>
-            <li><strong>Droit à l'oubli :</strong> Demander la suppression de vos données</li>
-            <li><strong>Droit à la portabilité :</strong> Recevoir vos données dans un format structuré</li>
-            <li><strong>Droit d'opposition :</strong> Vous opposer à certains traitements</li>
-          </ul>
-
-          <p className="mb-10">
-            Pour exercer ces droits, contactez-nous à :{" "}
-            <a
-              href="mailto:support@luxaris.com"
-              className="text-[#5a0f23] underline font-semibold"
-            >
-              support@luxaris.com
-            </a>
-          </p>
-
-          <h2 className="text-2xl font-semibold text-[#5a0f23] mb-6 mt-8">
-            Sécurité et Protection de Vos Données Personnelles
-          </h2>
-
-          <p className="mb-10">
-            Nous mettons en place des mesures techniques et organisationnelles pour protéger
-            vos données contre l'accès non autorisé, la perte ou la modification.
-            Cependant, aucune transmission sur Internet n'est 100% sécurisée.
-          </p>
-
-          <h2 className="text-2xl font-semibold text-[#5a0f23] mb-6 mt-8">
-            Nous Contacter Concernant Cette Politique de Confidentialité
-          </h2>
-
-          <p className="mb-4">
-            Pour toute question concernant cette politique de confidentialité :
-          </p>
-
-          <p className="mb-10 p-4 bg-slate-50 rounded">
-            <strong>Luxaris</strong><br />
-            Email : <a href="mailto:support@luxaris.com" className="text-[#5a0f23] underline">support@luxaris.com</a><br />
-            <span className="text-sm text-slate-600">Formulaire de contact : disponible sur notre site</span>
-          </p>
-
-          <div className="bg-slate-100 p-4 rounded text-sm text-slate-600">
-            <p>
-              <strong>Note :</strong> Cette page est sujette à modification. Une notification sera fournie
-              en cas de changements significatifs de cette politique.
-            </p>
-          </div>
+        <div className="space-y-9 leading-relaxed">
+          {privacySections.map((section) => (
+            <section key={section.title}>
+              <h2 className="mb-3 text-xl font-semibold text-[#4A001A]">{section.title}</h2>
+              {section.body?.map((paragraph) => (
+                <p key={paragraph} className="mb-3">{paragraph}</p>
+              ))}
+              {section.list && (
+                <ul className="list-disc space-y-1 pl-6">
+                  {section.list.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
+              {section.footer && <p className="mt-3">{section.footer}</p>}
+            </section>
+          ))}
         </div>
-
       </main>
     </>
   );
