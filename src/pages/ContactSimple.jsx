@@ -11,7 +11,7 @@ export default function ContactSimple() {
         />
       </Helmet>
 
-      <main className="bg-white text-slate-900 min-h-screen flex items-center justify-center px-4 py-20">
+      <main className="bg-white text-slate-900 min-h-screen flex items-center justify-center px-4 pt-28 pb-20 md:pt-36">
         <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-10">
           <div className="text-center mb-8">
             <p className="text-xs font-semibold tracking-widest text-[#4A001A] uppercase mb-3">

@@ -21,7 +21,7 @@ export default function Tarifs() {
             </Helmet>
 
             <main className="bg-linear-to-b from-slate-50 to-white">
-                <div className="min-h-screen py-8 sm:py-12 md:py-15 px-2 sm:px-4">
+                <div className="min-h-screen px-3 pt-28 pb-10 sm:px-4 sm:pt-32 sm:pb-12 md:pt-36 md:pb-15">
                     <div className="max-w-7xl mx-auto">
                         <TarifsHeader />
 

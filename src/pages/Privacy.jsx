@@ -20,9 +20,9 @@ export default function Privacy() {
         <link rel="canonical" href="https://luxaris.com/privacy" />
       </Helmet>
 
-      <main className="max-w-4xl mx-auto px-6 py-16 text-slate-700 leading-relaxed">
+      <main className="max-w-4xl mx-auto px-5 pt-28 pb-16 text-slate-700 leading-relaxed sm:px-6 md:pt-36">
 
-        <h1 className="text-4xl font-bold text-[#5a0f23] mb-2">
+        <h1 className="text-3xl font-bold text-[#5a0f23] mb-2 sm:text-4xl">
           Politique de Confidentialité Luxaris
         </h1>
 

@@ -178,7 +178,7 @@ export default function AIMannequins() {
   }, []);
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '40px auto', padding: '50px 20px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '7rem 20px 50px' }}>
       
     {/* --- LUXARIS HEADER SECTION --- */}
     <div style={{ textAlign: 'center', marginBottom: '60px' }}>

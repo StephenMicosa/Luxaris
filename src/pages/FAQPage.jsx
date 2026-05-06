@@ -26,7 +26,7 @@ export default function FAQPage() {
                 {/* Section héros */}
                 <section
                     ref={scrollRef}
-                    className="animate-scroll px-4 py-16 md:py-24 flex items-center"
+                    className="animate-scroll px-4 pt-28 pb-16 md:pt-36 md:pb-24 flex items-center"
                 >
                     <div className="max-w-4xl mx-auto w-full space-y-6">
                         <div className="text-center space-y-2 md:space-y-4">

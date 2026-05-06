@@ -40,7 +40,7 @@ export default function Admin() {
 
     if (!isAuthenticated) {
         return (
-            <main className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
+            <main className="min-h-screen bg-slate-900 flex items-center justify-center px-4 pt-28 pb-12 md:pt-36">
                 <div className="w-full max-w-md">
                     <div className="bg-white rounded-lg shadow-xl p-8">
                         <div className="flex items-center justify-center mb-6">
@@ -89,9 +89,9 @@ export default function Admin() {
     }
 
     return (
-        <main className="min-h-screen bg-slate-50 flex">
+        <main className="min-h-screen bg-slate-50 flex pt-16 md:pt-24">
             {/* Navigation dans la barre latérale */}
-            <aside className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} overflow-y-auto`}>
+            <aside className={`fixed md:static inset-y-0 left-0 z-40 w-64 bg-white border-r border-slate-200 transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} overflow-y-auto pt-16 md:pt-0`}>
                 <div className="p-6 border-b border-slate-200">
                     <h2 className="text-xl font-bold text-[#4A001A]">Luxaris</h2>
                     <p className="text-xs text-slate-500 mt-1">Admin Panel</p>
@@ -133,7 +133,7 @@ export default function Admin() {
             {/* Superposition du menu mobile */}
             {mobileMenuOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+                    className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
                     onClick={() => setMobileMenuOpen(false)}
                 />
             )}
@@ -141,7 +141,7 @@ export default function Admin() {
             {/* Contenu principal */}
             <div className="flex-1 flex flex-col">
                 {/* En-tête */}
-                <header className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
+                <header className="bg-white border-b border-slate-200 shadow-sm sticky top-16 z-30 md:top-24">
                     <div className="px-4 md:px-6 py-4 flex items-center justify-between">
                         <div className="flex items-center gap-4">
                             <button

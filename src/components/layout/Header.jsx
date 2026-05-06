@@ -37,14 +37,14 @@ export default function Header() {
     return (
         <>
             <header className={`fixed top-0 left-0 z-50 w-full border-b transition-all duration-300 ${scrolled
-                ? "bg-white/95 border-gray-200 py-3"
-                : "bg-transparent border-transparent py-6"
+                ? "bg-white/95 border-gray-200 py-2 md:py-3"
+                : "bg-white/95 border-gray-200 py-2 md:bg-transparent md:border-transparent md:py-6"
                 }`}>
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
+                <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6">
 
                     {/* Left: hamburger button (always visible) */}
                     <button
-                        className="flex items-center gap-2 text-slate-800"
+                        className="flex min-h-10 items-center gap-2 text-slate-800"
                         onClick={toggleMenu}
                         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
                         aria-expanded={open}
@@ -78,7 +78,7 @@ export default function Header() {
                                     loading="eager"
                                     fetchPriority="high"
                                     decoding="sync"
-                                    className="h-8 w-auto"
+                                    className="h-7 w-auto md:h-8"
                                 />
                             </picture>
                         </Link>

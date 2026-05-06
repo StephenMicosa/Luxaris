@@ -49,7 +49,7 @@ export default function HeroSection({
     return (
         <>
             <style>{heroAnimationStyles}</style>
-            <section className="relative min-h-130 flex items-center justify-center overflow-hidden animate-scroll" ref={scrollRef} style={{ backgroundColor: hasBackground ? '#fbf8fb' : '#f8fafc' }}>
+            <section className="relative min-h-[34rem] overflow-hidden pt-28 pb-16 flex items-center justify-center animate-scroll md:min-h-130 md:pt-24" ref={scrollRef} style={{ backgroundColor: hasBackground ? '#fbf8fb' : '#f8fafc' }}>
                 {hasBackground && (
                     <div className="absolute inset-0 opacity-40">
                         {/* Grille légère */}

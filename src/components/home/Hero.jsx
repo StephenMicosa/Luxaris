@@ -57,7 +57,7 @@ export default function Hero() {
 
       <section
         ref={scrollRef}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-24"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-28 pb-16 md:py-24"
       >
         <OptimizedHeroImage
           src={heroSm}
@@ -82,8 +82,8 @@ export default function Hero() {
             transformOrigin: "center center",
           }}
         >
-          <div className="rounded-lg p-8 bg-transparent md:p-14">
-            <h1 className="text-4xl md:text-6xl font-bold text-[#4A001A] mb-6 md:mb-8 leading-tight hero-animate">
+          <div className="rounded-lg bg-transparent px-0 py-8 sm:p-8 md:p-14">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-[#4A001A] mb-6 md:mb-8 leading-tight hero-animate">
               Une nouvelle vision du <br />
               mannequinat sans limites
             </h1>

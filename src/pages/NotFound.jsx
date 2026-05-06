@@ -10,14 +10,14 @@ export default function NotFound() {
                 <meta name="robots" content="noindex, follow" />
             </Helmet>
 
-            <main className="min-h-screen bg-linear-to-b from-slate-50 to-white flex items-center justify-center px-4 py-12">
+            <main className="min-h-screen bg-linear-to-b from-slate-50 to-white flex items-center justify-center px-4 pt-28 pb-12 md:pt-36">
                 <div className="max-w-2xl w-full text-center">
                     {/* Code d'erreur */}
                     <div className="mb-8">
                         <div className="text-7xl md:text-8xl font-black text-[#5a0f23] opacity-10 mb-2">
                             404
                         </div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-[#5a0f23] mb-4">
+                        <h1 className="text-4xl md:text-6xl font-bold text-[#5a0f23] mb-4">
                             Page non trouvée
                         </h1>
                     </div>

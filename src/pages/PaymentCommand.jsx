@@ -48,7 +48,7 @@ export default function PaymentCommand() {
   if (loading) return null;
 
   return (
-    <main style={{ maxWidth: '1200px', margin: '60px auto', padding: '0 20px' }}>
+    <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '7rem 20px 60px' }}>
       <CommandHeader title="Finaliser" subtitle="la commande" />
 
       <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', alignItems: 'stretch' }}>

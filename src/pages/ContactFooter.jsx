@@ -12,7 +12,7 @@ export default function ContactFooter() {
       </Helmet>
 
       <main className="bg-white text-slate-900 min-h-screen">
-        <section className="min-h-[80vh] flex items-center justify-center px-4 py-20 bg-slate-50">
+        <section className="min-h-[80vh] flex items-center justify-center px-4 pt-28 pb-20 bg-slate-50 md:pt-36">
           <div className="w-full max-w-xl bg-white rounded-2xl shadow p-8 text-left">
             <h1 className="text-4xl font-bold text-center text-[#4A001A] mb-8">
               Contactez nous
