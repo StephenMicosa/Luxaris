@@ -42,8 +42,8 @@ export default function PaymentCommand() {
   }, []);
 
   const handleFinalAction = () => {
-    alert(`Commande validée pour : ${order.id}\nBase: ${selectedBase?.name}\nOptions: ${selectedOptions.length}`);
-  };
+  window.scrollTo(0, 0); 
+};
 
   if (loading) return null;
 
