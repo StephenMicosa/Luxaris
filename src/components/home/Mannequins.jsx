@@ -181,7 +181,7 @@ export default function Mannequins() {
               title="Mannequin réel"
               description="Des profils humains pour les shootings, campagnes, castings et contenus où l’authenticité et l’expression naturelle sont essentielles."
               videoSrc={mannequinIAVideo}
-              linkTo="/contact"
+              linkTo="/real-models"
             />
 
             <CardBlock

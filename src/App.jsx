@@ -1,6 +1,6 @@
 import "./App.css";
 import { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "./components/layout/ErrorBoundary.jsx";
 import Header from "./components/layout/Header.jsx";
@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 // Charger en retard les pages non-critiques
 const About = lazy(() => import("./pages/About"));
 const AIMannequins = lazy(() => import("./pages/AIMannequins.jsx"));
+const RealMannequins = lazy(() => import("./pages/RealMannequins.jsx"));
 const Tarifs = lazy(() => import("./pages/Tarifs.jsx"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PaymentCommand = lazy(() => import("./pages/PaymentCommand.jsx"));
@@ -24,6 +25,16 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Admin = lazy(() => import("./pages/Admin.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname, search]);
+
+  return null;
+}
+
 export default function App() {
   // Gérer le cycle de vie de la page pour meilleure compatibilité bfcache
   usePageLifecycle();
@@ -33,6 +44,7 @@ export default function App() {
       <HelmetProvider>
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <div className="min-h-screen bg-transparent">
+            <ScrollToTop />
             <Header />
 
             <Suspense fallback={<PageLoader />}>
@@ -42,6 +54,7 @@ export default function App() {
                 <Route path="/pricing" element={<Tarifs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/ai-models" element={<AIMannequins />} />
+                <Route path="/real-models" element={<RealMannequins />} />
                 <Route path="/paiement" element={<PaymentCommand />} />
                 <Route path="/contact-footer" element={<ContactFooter />} />
                 <Route path="/contactez-nous" element={<ContactSimple />} />
