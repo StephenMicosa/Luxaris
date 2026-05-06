@@ -1,100 +1,101 @@
+import { Helmet } from "react-helmet-async";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
-export const formulas = [
-  "Mannequin réel",
-  "Mannequin IA",
+export const contactReasons = [
+  "Casting / Devenir Mannequin",
+  "Réservation Mannequin pour un projet",
+  "Partenariat & Presse",
+  "Autre demande"
 ];
 
-const formStyles = `
-  @keyframes slideInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .form-input {
-    animation: slideInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-`;
-
-export default function ContactForm() {
+export default function ContactFooter() {
   const scrollRef = useScrollAnimation();
 
   return (
     <>
-      <style>{formStyles}</style>
-      <div
-        className="w-full max-w-xl bg-white rounded-2xl shadow p-8 text-left animate-scroll"
-        ref={scrollRef}
-      >
-        <h2 className="text-2xl font-semibold text-center text-[#4A001A] mb-6">
-          Choisir un mannequin
-        </h2>
+      <Helmet>
+        <title>Contactez Luxaris | Agence de Mannequins</title>
+        <meta
+          name="description"
+          content="Contactez Luxaris pour un casting, une réservation ou un projet de production."
+        />
+      </Helmet>
 
-        <form className="space-y-4">
-          <div className="form-input" style={{ animationDelay: "0.3s" }}>
-            <label className="text-sm text-slate-600">Nom</label>
-            <input
-              type="text"
-              placeholder="Nom"
-              className="w-full rounded-lg border px-4 py-2"
-              required
-            />
-          </div>
-
-          <div className="form-input" style={{ animationDelay: "0.4s" }}>
-            <label className="text-sm text-slate-600">Email</label>
-            <input
-              type="email"
-              placeholder="email@exemple.com"
-              className="w-full rounded-lg border px-4 py-2"
-              required
-            />
-          </div>
-
-          <div className="form-input" style={{ animationDelay: "0.5s" }}>
-            <label className="text-sm text-slate-600">Numéro de téléphone</label>
-            <input
-              type="tel"
-              placeholder="+33 6 00 00 00 00"
-              className="w-full rounded-lg border px-4 py-2"
-            />
-          </div>
-
-          <div className="form-input" style={{ animationDelay: "0.6s" }}>
-            <label className="text-sm text-slate-600">Entreprise</label>
-            <input
-              type="text"
-              placeholder="Entreprise"
-              className="w-full rounded-lg border px-4 py-2"
-            />
-          </div>
-
-          <div className="form-input" style={{ animationDelay: "0.7s" }}>
-            <label className="text-sm text-slate-600">Type de mannequin</label>
-            <select className="w-full rounded-lg border px-4 py-2">
-              <option value="">Choisissez un type</option>
-              {formulas.map((formula) => (
-                <option key={formula}>{formula}</option>
-              ))}
-            </select>
-          </div>
-
-          <button
-            type="submit"
-            className="form-input w-full mt-4 bg-[#4A001A] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"
-            style={{ animationDelay: "0.9s" }}
+      <main className="bg-slate-50 text-slate-900 min-h-screen">
+        <section className="min-h-[90vh] flex items-center justify-center px-4 pt-28 pb-20 md:pt-36">
+          <div 
+            className="w-full max-w-xl bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-left animate-scroll"
+            ref={scrollRef}
           >
-            Sélectionner votre mannequin
-          </button>
-        </form>
-      </div>
+            <div className="text-center mb-10">
+              <h1 className="text-4xl font-bold text-[#4A001A] mb-3">
+                Contactez-nous
+              </h1>
+              <p className="text-slate-500">
+                Une question ? Un projet ? Notre équipe est là pour vous répondre.
+              </p>
+            </div>
+
+            <form className="space-y-6">
+              {/* Nom Complet */}
+              <div className="flex flex-col space-y-1">
+                <label className="text-sm font-semibold text-slate-700 ml-1">Nom complet</label>
+                <input
+                  type="text"
+                  placeholder="Ex: Jean Dupont"
+                  className="w-full rounded-xl border-slate-200 border px-4 py-3 focus:ring-2 focus:ring-[#4A001A] focus:border-transparent outline-none transition"
+                  required
+                />
+              </div>
+
+              {/* Email */}
+              <div className="flex flex-col space-y-1">
+                <label className="text-sm font-semibold text-slate-700 ml-1">Email professionnel</label>
+                <input
+                  type="email"
+                  placeholder="nom@exemple.fr"
+                  className="w-full rounded-xl border-slate-200 border px-4 py-3 focus:ring-2 focus:ring-[#4A001A] focus:border-transparent outline-none transition"
+                  required
+                />
+              </div>
+
+              {/* Objet du contact (C'est ce qui manquait !) */}
+              <div className="flex flex-col space-y-1">
+                <label className="text-sm font-semibold text-slate-700 ml-1">Pourquoi nous contactez-vous ?</label>
+                <select 
+                  className="w-full rounded-xl border-slate-200 border px-4 py-3 focus:ring-2 focus:ring-[#4A001A] focus:border-transparent outline-none transition bg-white cursor-pointer"
+                  required
+                >
+                  <option value="">Sélectionnez un motif...</option>
+                  {contactReasons.map((reason) => (
+                    <option key={reason} value={reason}>
+                      {reason}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Message */}
+              <div className="flex flex-col space-y-1">
+                <label className="text-sm font-semibold text-slate-700 ml-1">Message</label>
+                <textarea
+                  rows="5"
+                  placeholder="Détaillez votre demande ici..."
+                  className="w-full rounded-xl border-slate-200 border px-4 py-3 focus:ring-2 focus:ring-[#4A001A] focus:border-transparent outline-none transition resize-none"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#4A001A] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#320012] transform hover:scale-[1.01] transition-all duration-200 shadow-lg"
+              >
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
