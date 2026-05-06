@@ -24,33 +24,14 @@ export default function OrderSummary({ modelId, modelType, imageSrc, selectedBas
 
         <div style={{ flex: 1 }}>
           <div style={{ display: 'inline-block', padding: '6px 14px', borderRadius: '20px', backgroundColor: isAI ? '#eaf5ea' : '#fff4e6', color: isAI ? '#2d6a4f' : '#b25e0a', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '10px' }}>
-            {isAI ? 'Égérie IA' : 'Modèle Photo'}
+            {isAI ? 'manequin IA' : 'mannequin réel'}
           </div>
           <p style={{ margin: '0 0 5px 0', fontSize: '0.9rem', color: '#777' }}>Référence :</p>
           <p style={{ margin: '0', fontSize: '1.2rem', color: '#111', fontWeight: '600' }}>{modelId || 'N/A'}</p>
         </div>
       </div>
 
-      {/* DÉTAIL DE LA COMMANDE */}
-      <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: '20px', flex: 1 }}>
-        <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', color: '#999', marginBottom: '15px' }}>Détail de la prestation</p>
-        
-        {/* Base */}
-        {selectedBase && (
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontWeight: '500' }}>
-            <span>{selectedBase.name}</span>
-            <span>{selectedBase.prices[0].amount}</span>
-          </div>
-        )}
-
-        {/* Options cochées */}
-        {selectedOptions.map(opt => (
-          <div key={opt.id} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '0.9rem', color: '#555' }}>
-            <span>+ {opt.name}</span>
-            <span>{opt.prices[0].amount}</span>
-          </div>
-        ))}
-      </div>
+      
 
       {/* FOOTER DEVIS */}
       <div style={{ marginTop: '30px', backgroundColor: '#f9f9f9', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
