@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import mannequinVideo from "../../assets/videos/manq.mp4";
 import mannequinIAVideo from "../../assets/video/mannequin-ia.mp4";
 
 const mannequinStyles = `
@@ -180,7 +181,7 @@ export default function Mannequins() {
             <CardBlock
               title="Mannequin réel"
               description="Des profils humains pour les shootings, campagnes, castings et contenus où l’authenticité et l’expression naturelle sont essentielles."
-              videoSrc={mannequinIAVideo}
+              videoSrc={mannequinVideo}
               linkTo="/real-models"
             />
 

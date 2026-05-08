@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+§import { Helmet } from 'react-helmet-async';
 import TarifsHeader from "../components/pricing/TarifsHeader";
 import Functionalities from "../components/pricing/Functionalities";
 import PricingTable from "../components/pricing/PricingTable";
