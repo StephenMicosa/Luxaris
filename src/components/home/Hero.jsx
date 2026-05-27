@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import OptimizedHeroImage from "../common/OptimizedHeroImage";
-import heroSm from "../../assets/Hero-sm.jpg";
-import heroMd from "../../assets/Hero-md.jpg";
-import heroLg from "../../assets/Hero-lg.jpg";
-import heroSmWebp from "../../assets/Hero-sm.webp";
-import heroMdWebp from "../../assets/Hero-md.webp";
-import heroLgWebp from "../../assets/Hero-lg.webp";
+import heroVideo from "../../assets/videos/Bannière du site Luxaris-2.mp4";
 
 const heroStyles = `
   @keyframes fadeInUp {
@@ -59,21 +53,16 @@ export default function Hero() {
         ref={scrollRef}
         className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-28 pb-16 md:py-24"
       >
-        <OptimizedHeroImage
-          src={heroSm}
-          srcWebp={heroSmWebp}
-          srcMd={heroMd}
-          srcMdWebp={heroMdWebp}
-          srcLg={heroLg}
-          srcLgWebp={heroLgWebp}
-          alt="Luxaris Hero Banner"
-          className="absolute inset-0 w-full h-full"
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
         />
-
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-rose-200 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-200 rounded-full blur-3xl"></div>
-        </div>
 
         <div
           className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center md:px-6"
@@ -88,7 +77,7 @@ export default function Hero() {
               mannequinat sans limites
             </h1>
 
-            <p className="text-sm md:text-lg text-slate-600 mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed hero-animate-1">
+            <p className="text-sm md:text-lg text-black-600 mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed hero-animate-1">
               Luxaris réunit mannequins réels et mannequins IA pour accompagner
               les marques dans leurs campagnes, leurs shootings, leurs contenus
               publicitaires et leurs productions visuelles.
