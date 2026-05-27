@@ -2,49 +2,41 @@ import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 
-const photoModules = import.meta.glob("../assets/Photos/*.{jpg,jpeg,png}", {
+const photoModules = import.meta.glob("../assets/Photos/**/*.{jpg,jpeg,png}", {
   eager: true,
   import: "default",
 });
 
-const realPhotos = Object.values(photoModules);
+const getPhotosFromFolder = (folderName) =>
+  Object.entries(photoModules)
+    .filter(([path]) => path.includes(`/Photos/${folderName}/`))
+    .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, undefined, { numeric: true }))
+    .slice(0, 3 || undefined)
+    .reduce((poses, [, src], index) => {
+      poses[`photo-${index + 1}`] = src;
+      return poses;
+    }, {});
 
 const REAL_MODELS = [
   {
     id: "real-01",
     name: "TALENT 01",
-    poses: {
-      portrait: realPhotos[0],
-      full: realPhotos[1],
-      detail: realPhotos[2],
-    },
+    poses: getPhotosFromFolder("woman1"),
   },
   {
     id: "real-02",
     name: "TALENT 02",
-    poses: {
-      portrait: realPhotos[3],
-      full: realPhotos[4],
-      detail: realPhotos[5],
-    },
+    poses: getPhotosFromFolder("man1"),
   },
   {
     id: "real-03",
     name: "TALENT 03",
-    poses: {
-      portrait: realPhotos[6],
-      full: realPhotos[7],
-      detail: realPhotos[8],
-    },
+    poses: getPhotosFromFolder("duo1"),
   },
   {
     id: "real-04",
     name: "TALENT 04",
-    poses: {
-      portrait: realPhotos[9],
-      full: realPhotos[10],
-      detail: realPhotos[11],
-    },
+    poses: getPhotosFromFolder("trio"),
   },
 ];
 
