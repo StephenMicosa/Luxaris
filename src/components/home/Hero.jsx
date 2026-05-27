@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import heroVideo from "../../assets/videos/Bannière du site Luxaris-2.mp4";
+import heroVideo from "../../assets/videos/bann.mp4";
 
 const heroStyles = `
   @keyframes fadeInUp {
