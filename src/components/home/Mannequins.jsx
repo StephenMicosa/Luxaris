@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import mannequinVideo from "../../assets/videos/manq.mp4";
 import mannequinIAVideo from "../../assets/video/mannequin-ia.mp4";
-
+ 
 const mannequinStyles = `
   @keyframes fadeInUp {
     from {
@@ -14,7 +14,7 @@ const mannequinStyles = `
       transform: translateY(0);
     }
   }
-
+ 
   @keyframes elegantFlip {
     0%   { transform: rotateY(0deg); }
     20%  { transform: rotateY(0deg); }
@@ -22,11 +22,11 @@ const mannequinStyles = `
     70%  { transform: rotateY(180deg); }
     100% { transform: rotateY(360deg); }
   }
-
+ 
   .fade-card {
     animation: fadeInUp 0.8s ease-out forwards;
   }
-
+ 
   /* CARTE EN 9:16 */
   .flip-card {
     width: 100%;
@@ -36,11 +36,11 @@ const mannequinStyles = `
     perspective: 1200px;
     cursor: grab;
   }
-
+ 
   .flip-card:active {
     cursor: grabbing;
   }
-
+ 
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -48,11 +48,11 @@ const mannequinStyles = `
     transform-style: preserve-3d;
     animation: elegantFlip 10s ease-in-out infinite;
   }
-
+ 
   .flip-card:hover .flip-card-inner {
     animation-play-state: paused;
   }
-
+ 
   .flip-face {
     position: absolute;
     inset: 0;
@@ -62,14 +62,14 @@ const mannequinStyles = `
     -webkit-backface-visibility: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   }
-
+ 
   .flip-face video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
-
+ 
   .flip-back {
     transform: rotateY(180deg);
     background: linear-gradient(180deg, #4A001A, #6b0f1a);
@@ -80,26 +80,26 @@ const mannequinStyles = `
     text-align: center;
     padding: 1.5rem;
   }
-
+ 
   .flip-back-content h4 {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 0.8rem;
   }
-
+ 
   .flip-back-content p {
     font-size: 0.95rem;
     line-height: 1.6;
     color: rgba(255,255,255,0.9);
   }
-
+ 
   @media (max-width: 768px) {
     .flip-card {
       max-width: 220px;
     }
   }
 `;
-
+ 
 function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/contact" }) {
   return (
     <div
@@ -111,15 +111,15 @@ function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/c
         <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#4A001A] mb-3">
           NOS SOLUTIONS
         </p>
-
+ 
         <h3 className="text-3xl md:text-4xl font-bold text-[#4A001A] mb-5">
           {title}
         </h3>
-
+ 
         <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
           {description}
         </p>
-
+ 
         <div className="mt-8">
           <Link
             to={linkTo}
@@ -129,7 +129,7 @@ function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/c
           </Link>
         </div>
       </div>
-
+ 
       {/* CARTE CENTRÉE */}
       <div className="flex justify-center">
         <div className="flip-card select-none">
@@ -137,7 +137,7 @@ function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/c
             <div className="flip-face">
               <video src={videoSrc} autoPlay muted loop playsInline />
             </div>
-
+ 
             <div className="flip-face flip-back">
               <div className="flip-back-content">
                 <h4>{title}</h4>
@@ -150,14 +150,14 @@ function CardBlock({ title, description, videoSrc, reverse = false, linkTo = "/c
     </div>
   );
 }
-
+ 
 export default function Mannequins() {
   const scrollRef = useScrollAnimation();
-
+ 
   return (
     <>
       <style>{mannequinStyles}</style>
-
+ 
       <section
         className="w-full bg-white py-20 px-4 animate-scroll"
         ref={scrollRef}
@@ -167,16 +167,16 @@ export default function Mannequins() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#4A001A] mb-3">
               NOS MANNEQUINS
             </p>
-
+ 
             <h2 className="text-3xl md:text-5xl font-bold text-[#4A001A] mb-5">
               Deux approches pour répondre aux besoins des marques
             </h2>
-
+ 
             <p className="text-slate-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
               Luxaris propose des mannequins réels et des mannequins IA pour accompagner les marques dans leurs campagnes, shootings et productions visuelles.
             </p>
           </div>
-
+ 
           <div className="space-y-24">
             <CardBlock
               title="Mannequin réel"
@@ -184,7 +184,7 @@ export default function Mannequins() {
               videoSrc={mannequinVideo}
               linkTo="/real-models"
             />
-
+ 
             <CardBlock
               title="Mannequin IA"
               description="Des mannequins générés avec l’IA pour produire rapidement des visuels premium, cohérents et innovants."
