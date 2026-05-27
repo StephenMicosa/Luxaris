@@ -24,7 +24,7 @@ export default function OrderSummary({ modelId, modelType, imageSrc, selectedBas
 
         <div style={{ flex: 1 }}>
           <div style={{ display: 'inline-block', padding: '6px 14px', borderRadius: '20px', backgroundColor: isAI ? '#eaf5ea' : '#fff4e6', color: isAI ? '#2d6a4f' : '#b25e0a', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '10px' }}>
-            {isAI ? 'manequin IA' : 'mannequin réel'}
+            {isAI ? 'mannequin IA' : 'mannequin réel'}
           </div>
           <p style={{ margin: '0 0 5px 0', fontSize: '0.9rem', color: '#777' }}>Référence :</p>
           <p style={{ margin: '0', fontSize: '1.2rem', color: '#111', fontWeight: '600' }}>{modelId || 'N/A'}</p>
