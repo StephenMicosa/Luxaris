@@ -20,22 +20,22 @@ const getPhotosFromFolder = (folderName) =>
 const REAL_MODELS = [
   {
     id: "real-01",
-    name: "TALENT 01",
+    name: "Model 01",
     poses: getPhotosFromFolder("woman1"),
   },
   {
     id: "real-02",
-    name: "TALENT 02",
+    name: "Model 02",
     poses: getPhotosFromFolder("man1"),
   },
   {
     id: "real-03",
-    name: "TALENT 03",
+    name: "Model 03",
     poses: getPhotosFromFolder("duo1"),
   },
   {
     id: "real-04",
-    name: "TALENT 04",
+    name: "Model 04",
     poses: getPhotosFromFolder("trio"),
   },
 ];
@@ -286,7 +286,7 @@ export default function RealMannequins() {
               textTransform: "uppercase",
             }}
           >
-            nos <span style={{ color: "#4a0b19", fontWeight: "700" }}>Talents</span>
+            nos <span style={{ color: "#4a0b19", fontWeight: "700" }}>Models</span>
           </h1>
 
           <div
